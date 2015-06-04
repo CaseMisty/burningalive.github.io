@@ -94,8 +94,8 @@ a img {
   font-family: "covered_by_your_graceregular";
   font-weight: normal;
   font-style: normal;
-  src: url("../font/consolas.eot");
-  src: url("../font/consolas.eot?#iefix") format('embedded-opentype'), url("../font/consolas.svg#covered_by_your_graceregular") format('svg'), url("../font/consolas.woff") format('woff'), url("../font/consolas.ttf") format('truetype');
+  src: url("../font/consola.eot");
+  src: url("../font/consola.eot?#iefix") format('embedded-opentype'), url("../font/consola.svg#covered_by_your_graceregular") format('svg'), url("../font/consola.woff") format('woff'), url("../font/consola.ttf") format('truetype');
 }
 /* icon Font */
 @font-face {
@@ -1971,7 +1971,7 @@ footer {
   width: 6.875em;
   height: 6.875em;
   margin: 0 auto;
-  background: no-repeat url("../img/author.jpg") left top;
+  background: no-repeat url("../img/bottom.jpg") left top;
   -webkit-background-size: 6.875em 6.875em;
   -moz-background-size: 6.875em 6.875em;
   background-size: 6.875em 6.875em;
