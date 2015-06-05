@@ -94,8 +94,8 @@ a img {
   font-family: "covered_by_your_graceregular";
   font-weight: normal;
   font-style: normal;
-  src: url("../font/consola.eot");
-  src: url("../font/consola.eot?#iefix") format('embedded-opentype'), url("../font/consola.svg#covered_by_your_graceregular") format('svg'), url("../font/consola.woff") format('woff'), url("../font/consola.ttf") format('truetype');
+  src: url("../font/wryh.eot");
+  src: url("../font/wryh.eot?#iefix") format('embedded-opentype'), url("../font/wryh.svg#covered_by_your_graceregular") format('svg'), url("../font/wryh.woff") format('woff'), url("../font/wryh.ttf") format('truetype');
 }
 /* icon Font */
 @font-face {
