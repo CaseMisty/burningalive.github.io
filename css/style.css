@@ -94,8 +94,8 @@ a img {
   font-family: "covered_by_your_graceregular";
   font-weight: normal;
   font-style: normal;
-  src: url("../font/wryh.eot");
-  src: url("../font/wryh.eot?#iefix") format('embedded-opentype'), url("../font/wryh.svg#covered_by_your_graceregular") format('svg'), url("../font/wryh.woff") format('woff'), url("../font/wryh.ttf") format('truetype');
+  src: url("../font/Microsoft.eot");
+  src: url("../font/Microsoft.eot?#iefix") format('embedded-opentype'), url("../font/Microsoft.svg#covered_by_your_graceregular") format('svg'), url("../font/Microsoft.woff") format('woff'), url("../font/Microsoft.ttf") format('truetype');
 }
 /* icon Font */
 @font-face {
@@ -1932,7 +1932,7 @@ section.comment {
 }
 footer {
   margin-top: 1em;
-  background: #1f1f1f;
+  background: #2ca6cb;
   padding: 0 2% 0.5em;
 }
 #footer {
