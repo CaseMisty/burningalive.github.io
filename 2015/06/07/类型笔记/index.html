@@ -4,26 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Js笔记 | 静观·游进</title>
+    <title>JavaScript网易云课堂初学笔记 | 静观·游进</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="burningalive">
     
 
     
-    <meta name="description" content="类型识别JavaScript原生对象类型一共分为以下几种123456789101112131415UndefinedNullObjectBoolStringNumberFunctonArrayDateRegExpErrorMateJSON全局对象arguments
-typeof">
+    <meta name="description" content="第一周讲的JavaScript课件有些混乱，讲课老师也是从前线拉下来的资深猿族，完全没有考虑我这种初学者的感受……那课讲得快的让我无从适从，权挑些重要的部分记录一下，与课后测试和讨论这些重点更为有关。会持续添加，也算是个笔记吧。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Js笔记">
+<meta property="og:title" content="JavaScript网易云课堂初学笔记">
 <meta property="og:url" content="burningalive.cn/2015/06/07/类型笔记/index.html">
 <meta property="og:site_name" content="静观·游进">
-<meta property="og:description" content="类型识别JavaScript原生对象类型一共分为以下几种123456789101112131415UndefinedNullObjectBoolStringNumberFunctonArrayDateRegExpErrorMateJSON全局对象arguments
-typeof">
-<meta property="og:updated_time" content="2015-06-07T14:36:37.111Z">
+<meta property="og:description" content="第一周讲的JavaScript课件有些混乱，讲课老师也是从前线拉下来的资深猿族，完全没有考虑我这种初学者的感受……那课讲得快的让我无从适从，权挑些重要的部分记录一下，与课后测试和讨论这些重点更为有关。会持续添加，也算是个笔记吧。">
+<meta property="og:updated_time" content="2015-06-08T10:56:27.455Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Js笔记">
-<meta name="twitter:description" content="类型识别JavaScript原生对象类型一共分为以下几种123456789101112131415UndefinedNullObjectBoolStringNumberFunctonArrayDateRegExpErrorMateJSON全局对象arguments
-typeof">
+<meta name="twitter:title" content="JavaScript网易云课堂初学笔记">
+<meta name="twitter:description" content="第一周讲的JavaScript课件有些混乱，讲课老师也是从前线拉下来的资深猿族，完全没有考虑我这种初学者的感受……那课讲得快的让我无从适从，权挑些重要的部分记录一下，与课后测试和讨论这些重点更为有关。会持续添加，也算是个笔记吧。">
 
     
     <link rel="alternative" href="/atom.xml" title="静观·游进" type="application/atom+xml">
@@ -79,7 +76,7 @@ typeof">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/06/07/类型笔记/" title="Js笔记" itemprop="url">Js笔记</a>
+      <a href="/2015/06/07/类型笔记/" title="JavaScript网易云课堂初学笔记" itemprop="url">JavaScript网易云课堂初学笔记</a>
   </h1>
   <p class="article-author">By
        
@@ -95,12 +92,28 @@ typeof">
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#类型识别"><span class="toc-number">1.</span> <span class="toc-text">类型识别</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#typeof"><span class="toc-number">1.1.</span> <span class="toc-text">typeof</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript中的对象类型"><span class="toc-number">1.</span> <span class="toc-text">JavaScript中的对象类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#原生对象"><span class="toc-number">1.1.</span> <span class="toc-text">原生对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标准类型"><span class="toc-number">1.2.</span> <span class="toc-text">标准类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标准内置对象"><span class="toc-number">1.3.</span> <span class="toc-text">标准内置对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构造器"><span class="toc-number">1.4.</span> <span class="toc-text">构造器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象"><span class="toc-number">1.5.</span> <span class="toc-text">对象</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#类型识别的方法"><span class="toc-number">2.</span> <span class="toc-text">类型识别的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#type_of"><span class="toc-number">2.1.</span> <span class="toc-text">type of</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#instance_of"><span class="toc-number">2.2.</span> <span class="toc-text">instance of</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#constructor-NaN"><span class="toc-number">2.3.</span> <span class="toc-text">constructor</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-protope-toString"><span class="toc-number">2.4.</span> <span class="toc-text">Object.protope.toString</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#具体在代码中的类型识别实现"><span class="toc-number">3.</span> <span class="toc-text">具体在代码中的类型识别实现</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="类型识别">类型识别</h1><p>JavaScript原生对象类型一共分为以下几种<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Undefined</span><br><span class="line">Null</span><br><span class="line"><span class="built_in">Object</span></span><br><span class="line">Bool</span><br><span class="line"><span class="built_in">String</span></span><br><span class="line"><span class="built_in">Number</span></span><br><span class="line">Functon</span><br><span class="line"><span class="built_in">Array</span></span><br><span class="line"><span class="built_in">Date</span></span><br><span class="line"><span class="built_in">RegExp</span></span><br><span class="line"><span class="built_in">Error</span></span><br><span class="line">Mate</span><br><span class="line"><span class="built_in">JSON</span></span><br><span class="line">全局对象</span><br><span class="line"><span class="built_in">arguments</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="typeof">typeof</h2>  
+		<h1 id="JavaScript中的对象类型">JavaScript中的对象类型</h1><h2 id="原生对象">原生对象</h2><p>JavaScript原生对象类型一共分为以下几种<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Undefined</span><br><span class="line">Null</span><br><span class="line"><span class="built_in">Object</span></span><br><span class="line">Bool</span><br><span class="line"><span class="built_in">String</span></span><br><span class="line"><span class="built_in">Number</span></span><br><span class="line">Functon</span><br><span class="line"><span class="built_in">Array</span></span><br><span class="line"><span class="built_in">Date</span></span><br><span class="line"><span class="built_in">RegExp</span></span><br><span class="line"><span class="built_in">Error</span></span><br><span class="line">Mate</span><br><span class="line"><span class="built_in">JSON</span></span><br><span class="line">全局对象</span><br><span class="line"><span class="built_in">arguments</span></span><br></pre></td></tr></table></figure></p>
+<p>再细分可分为：标准类型、标准内置对象、构造器、对象。</p>
+<h2 id="标准类型">标准类型</h2><p>标准类型包括：<br><code>Undefined    Null    Object    Bool    String    Number</code></p>
+<h2 id="标准内置对象">标准内置对象</h2><p>标准内置对象包括：<br><code>Object    Bool    String    Number    Functon    Array    Date    RegExp    Error    Math    JSON    全局对象</code></p>
+<h2 id="构造器">构造器</h2><p>构造器包括：<br><code>Object  Bool String Number Function Array Date RegExp Error</code></p>
+<h2 id="对象">对象</h2><p>对象包括：<br><code>Math JSON 全局对象  Arguments</code></p>
+<h1 id="类型识别的方法">类型识别的方法</h1><p>于课件中提到的类型识别一共有四种方法。</p>
+<h2 id="type_of">type of</h2><p>type of 可识别除Null之外的<em>标准类型</em><br><code>Undefined    Null    Object    Bool    String    Number</code></p>
+<h2 id="instance_of">instance of</h2><p>instance of可识别<em>内置对象类型</em><br><code>Object    Bool    String    Number    Functon    Array    Date    RegExp    Error    Math    JSON    全局对象</code><br>但是不能识别原始类型。</p>
+<h2 id="constructor-NaN">constructor</h2><p>constructor可识别<em>标准类型</em>，不能识别<code>Undefined  Null</code>类型，可以识别自定义对象类型。</p>
+<h2 id="Object-protope-toString">Object.protope.toString</h2><p>Object.protope.toString可以识别<em>标准</em>、<em>内置对象类型</em>。不能识别自定义的object。</p>
+<h1 id="具体在代码中的类型识别实现">具体在代码中的类型识别实现</h1><p>从上述的描述可以看出，四种方法中三种都有严重的局限性，可以使用的范围最为广泛的就是Object.protope.toString方法，除了自己定义的对象，对于Js的原生对象均可以良好的识别。这里列出可以常用的类型识别函数,这个函数可以将接受的数据以完全小写的字符串输出该数据的类型。<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function <span class="class"><span class="keyword">type</span>(</span><span class="class"><span class="keyword">object</span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="type">Object</span>.protope.toString.call(<span class="class"><span class="keyword">object</span>).<span class="title">slice</span>(</span><span class="number">8</span>,-<span class="number">1</span>).toLowerCase();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>其中，toString函数中并没有.call方法，而且以一个整数为例，如果使用</p>
+<pre><code><span class="typedef"><span class="keyword">type</span><span class="container">(2)</span><span class="container">{
+<span class="title">return</span> <span class="type">Object</span>.<span class="title">protope</span>.<span class="title">toString</span>.<span class="title">call</span>(<span class="title">object</span>)
+}</span></span>
+</code></pre><p>输出的形式为[Object Number]，这种形式对于我们判断类型时对比字符串是比较麻烦的，因而在函数之后添加<code>.slice(8,-1)</code>使输出字符串从第8个字符开始，输出结束从倒数第一个字符开始。<br>再添加<code>.toLowerCase()</code>使输出的字符串转化成小写。这样进行<code>===</code>的对比时右侧比较项的书写就更统一啦。</p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -122,7 +135,7 @@ typeof">
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="burningalive.cn/2015/06/07/类型笔记/" data-title="Js笔记 | 静观·游进" data-tsina="null" class="share clearfix">
+	  <div data-url="burningalive.cn/2015/06/07/类型笔记/" data-title="JavaScript网易云课堂初学笔记 | 静观·游进" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -137,9 +150,9 @@ typeof">
  
 
 <div class="next">
-<a href="/2015/06/05/my-new-post/"  title="博客创建好之后的第一篇文章">
+<a href="/2015/06/07/建立过程/"  title="我的博客自定义设置过程">
  <strong>下一篇：</strong><br/> 
- <span>博客创建好之后的第一篇文章
+ <span>我的博客自定义设置过程
 </span>
 </a>
 </div>
@@ -148,7 +161,7 @@ typeof">
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/06/07/类型笔记/" data-title="Js笔记" data-url="burningalive.cn/2015/06/07/类型笔记/"></div>
+	<div class="ds-thread" data-thread-key="2015/06/07/类型笔记/" data-title="JavaScript网易云课堂初学笔记" data-url="burningalive.cn/2015/06/07/类型笔记/"></div>
 </section>
 
 
@@ -158,7 +171,7 @@ typeof">
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#类型识别"><span class="toc-number">1.</span> <span class="toc-text">类型识别</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#typeof"><span class="toc-number">1.1.</span> <span class="toc-text">typeof</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript中的对象类型"><span class="toc-number">1.</span> <span class="toc-text">JavaScript中的对象类型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#原生对象"><span class="toc-number">1.1.</span> <span class="toc-text">原生对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标准类型"><span class="toc-number">1.2.</span> <span class="toc-text">标准类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标准内置对象"><span class="toc-number">1.3.</span> <span class="toc-text">标准内置对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#构造器"><span class="toc-number">1.4.</span> <span class="toc-text">构造器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对象"><span class="toc-number">1.5.</span> <span class="toc-text">对象</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#类型识别的方法"><span class="toc-number">2.</span> <span class="toc-text">类型识别的方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#type_of"><span class="toc-number">2.1.</span> <span class="toc-text">type of</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#instance_of"><span class="toc-number">2.2.</span> <span class="toc-text">instance of</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#constructor-NaN"><span class="toc-number">2.3.</span> <span class="toc-text">constructor</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-protope-toString"><span class="toc-number">2.4.</span> <span class="toc-text">Object.protope.toString</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#具体在代码中的类型识别实现"><span class="toc-number">3.</span> <span class="toc-text">具体在代码中的类型识别实现</span></a></li></ol>
  
   </div>
 
@@ -170,6 +183,10 @@ typeof">
 <div class="categorieslist">
 	<p class="asidetitle">分类</p>
 		<ul>
+		
+		  
+			<li><a href="/categories/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+		  
 		
 		  
 			<li><a href="/categories/JavaScript学习记录/" title="JavaScript学习记录">JavaScript学习记录<sup>1</sup></a></li>
@@ -189,6 +206,10 @@ typeof">
 		<ul class="clearfix">
 		
 			
+				<li><a href="/tags/杂谈/" title="杂谈">杂谈<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/JavaScript/" title="JavaScript">JavaScript<sup>1</sup></a></li>
 			
 		
@@ -197,7 +218,7 @@ typeof">
 			
 		
 			
-				<li><a href="/tags/杂谈/" title="杂谈">杂谈<sup>1</sup></a></li>
+				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
 			
 		
 		</ul>
@@ -229,8 +250,6 @@ typeof">
   <div class="rsspart">
 	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
 </div>
-
-  
 
 </aside>
 </div>
