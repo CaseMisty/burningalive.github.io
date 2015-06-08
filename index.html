@@ -71,60 +71,219 @@
     <div id="container">
       <div id="main">
 
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2015/06/07/类型笔记/" title="JavaScript网易云课堂初学笔记" itemprop="url">
-  
-    <h1 itemprop="name">JavaScript网易云课堂初学笔记</h1>
+   
     
-     
-      <p itemprop="description" >第一周讲的JavaScript课件有些混乱，讲课老师也是从前线拉下来的资深猿族，完全没有考虑我这种初学者的感受……那课讲得快的让我无从适从，权挑些重要的部分记录一下，与课后测试和讨论这些重点更为有关。会持续添加，也算是个笔记吧。</p>
-      
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
     
-    <time datetime="2015-06-07T13:25:03.000Z" itemprop="datePublished">2015-06-07</time>
-  </a>
-</section>
-
-
-
-
-
-
-  
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2015/06/07/建立过程/" title="我的博客自定义设置过程" itemprop="url">
-  
-    <h1 itemprop="name">我的博客自定义设置过程</h1>
+      <a href="/2015/06/07/类型笔记/" title="JavaScript网易云课堂初学笔记" itemprop="url">JavaScript网易云课堂初学笔记</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="burningalive" target="_blank" itemprop="author">burningalive</a>
+		
+  <p class="article-time">
+    <time datetime="2015-06-07T13:25:03.000Z" itemprop="datePublished"> 发表于 2015-06-07</time>
     
-     
-      <p itemprop="description" >使用Hexo搭建博客之路真是艰难险阻……设置繁复且不稳定，在不同的电脑上总会出现各种乱七八糟不同的错误，要设置的项目众多，然而设置的位置又不明朗。本来感觉我的博客已经符合我的预期要求了，突然多说评论功能又无法使用了，实在让人恼火，因此在此第二次重建之时记录一下自定义设置的步骤以备今后之用。</p>
-      
-    
-    <time datetime="2015-06-07T13:25:03.000Z" itemprop="datePublished">2015-06-07</time>
-  </a>
-</section>
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="JavaScript中的对象类型">JavaScript中的对象类型</h1><h2 id="原生对象">原生对象</h2><p>JavaScript原生对象类型一共分为以下几种<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Undefined</span><br><span class="line">Null</span><br><span class="line"><span class="built_in">Object</span></span><br><span class="line">Bool</span><br><span class="line"><span class="built_in">String</span></span><br><span class="line"><span class="built_in">Number</span></span><br><span class="line">Functon</span><br><span class="line"><span class="built_in">Array</span></span><br><span class="line"><span class="built_in">Date</span></span><br><span class="line"><span class="built_in">RegExp</span></span><br><span class="line"><span class="built_in">Error</span></span><br><span class="line">Mate</span><br><span class="line"><span class="built_in">JSON</span></span><br><span class="line">全局对象</span><br><span class="line"><span class="built_in">arguments</span></span><br></pre></td></tr></table></figure></p>
+<p>再细分可分为：标准类型、标准内置对象、构造器、对象。</p>
+<h2 id="标准类型">标准类型</h2><p>标准类型包括：<br><code>Undefined    Null    Object    Bool    String    Number</code></p>
+<h2 id="标准内置对象">标准内置对象</h2><p>标准内置对象包括：<br><code>Object    Bool    String    Number    Functon    Array    Date    RegExp    Error    Math    JSON    全局对象</code></p>
+<h2 id="构造器">构造器</h2><p>构造器包括：<br><code>Object  Bool String Number Function Array Date RegExp Error</code></p>
+<h2 id="对象">对象</h2><p>对象包括：<br><code>Math JSON 全局对象  Arguments</code></p>
+<h1 id="类型识别的方法">类型识别的方法</h1><p>于课件中提到的类型识别一共有四种方法。</p>
+<h2 id="type_of">type of</h2><p>type of 可识别除Null之外的<em>标准类型</em><br><code>Undefined    Null    Object    Bool    String    Number</code></p>
+<h2 id="instance_of">instance of</h2><p>instance of可识别<em>内置对象类型</em><br><code>Object    Bool    String    Number    Functon    Array    Date    RegExp    Error    Math    JSON    全局对象</code><br>但是不能识别原始类型。</p>
+<h2 id="constructor-NaN">constructor</h2><p>constructor可识别<em>标准类型</em>，不能识别<code>Undefined  Null</code>类型，可以识别自定义对象类型。</p>
+<h2 id="Object-protope-toString">Object.protope.toString</h2><p>Object.protope.toString可以识别<em>标准</em>、<em>内置对象类型</em>。不能识别自定义的object。</p>
+<h1 id="具体在代码中的类型识别实现">具体在代码中的类型识别实现</h1><p>从上述的描述可以看出，四种方法中三种都有严重的局限性，可以使用的范围最为广泛的就是Object.protope.toString方法，除了自己定义的对象，对于Js的原生对象均可以良好的识别。这里列出可以常用的类型识别函数,这个函数可以将接受的数据以完全小写的字符串输出该数据的类型。<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function <span class="class"><span class="keyword">type</span>(</span><span class="class"><span class="keyword">object</span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="type">Object</span>.protope.toString.call(<span class="class"><span class="keyword">object</span>).<span class="title">slice</span>(</span><span class="number">8</span>,-<span class="number">1</span>).toLowerCase();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>其中，toString函数中并没有.call方法，而且以一个整数为例，如果使用</p>
+<pre><code><span class="typedef"><span class="keyword">type</span><span class="container">(2)</span><span class="container">{
+<span class="title">return</span> <span class="type">Object</span>.<span class="title">protope</span>.<span class="title">toString</span>.<span class="title">call</span>(<span class="title">object</span>)
+}</span></span>
+</code></pre><p>输出的形式为[Object Number]，这种形式对于我们判断类型时对比字符串是比较麻烦的，因而在函数之后添加<code>.slice(8,-1)</code>使输出字符串从第8个字符开始，输出结束从倒数第一个字符开始。<br>再添加<code>.toLowerCase()</code>使输出的字符串转化成小写。这样进行<code>===</code>的对比时右侧比较项的书写就更统一啦。</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/JavaScript学习记录/">JavaScript学习记录</a>
+</div>
 
 
-
-
-
-
+  <div class="article-tags">
   
-<section class="post" itemscope itemprop="blogitem">
-  
-    <a href="/2015/06/05/my-new-post/" title="博客创建好之后的第一篇文章" itemprop="url">
-  
-    <h1 itemprop="name">博客创建好之后的第一篇文章</h1>
+  <span></span> <a href="/tags/JavaScript/">JavaScript</a><a href="/tags/前端/">前端</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/06/07/类型笔记/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/06/07/类型笔记/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
     
-     
-      <p itemprop="description" >其实一开始觉得我要写博客，我是拒绝的</p>
-      
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
     
-    <time datetime="2015-06-05T08:56:05.000Z" itemprop="datePublished">2015-06-05</time>
-  </a>
-</section>
+      <a href="/2015/06/07/建立过程/" title="我的博客自定义设置过程" itemprop="url">我的博客自定义设置过程</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="burningalive" target="_blank" itemprop="author">burningalive</a>
+		
+  <p class="article-time">
+    <time datetime="2015-06-07T13:25:03.000Z" itemprop="datePublished"> 发表于 2015-06-07</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="部署Hexo">部署Hexo</h1><p>使用git输入命令。</p>
+<pre><code>$ npm <span class="keyword">install</span> -g hexo
+</code></pre><p>开始下载Hexo的文件，在硬盘中新建一个文件夹，例如起名为hexo，右键之选择Git bush。</p>
+<pre><code>$ hexo init
+npm <span class="keyword">install</span>
+</code></pre><p>这样hexo的文件就在新建的文件夹创建好了。<br>之后来下载主题，我使用的是官网jacman这个主题</p>
+<pre><code><span class="variable">$ </span>git clone <span class="symbol">https:</span>/<span class="regexp">/github.com/wuchong</span><span class="regexp">/jacman.git themes/jacman</span>
+</code></pre><p>这时git会开始下载jacman主题到新建的文件夹。虽然下载过来了，但是我们还没有设置去使用这个主题。在hexo的根目录下打开_config.yml文件，推荐使用sublime text这个软件，如果使用Windows自带的记事本根本就没法看清内部的设置项目。</p>
+<pre><code><span class="attribute">theme</span>: <span class="string">jacman</span>
+</code></pre><p>如果要提交到github，在最下方设置：</p>
+<pre><code><span class="attribute">deploy</span>:
+  <span class="attribute">type</span>: git
+  <span class="attribute">repository</span>: <span class="attribute">https</span>:<span class="comment">//github.com/ yourname /yourname.github.io.git</span>
+  <span class="attribute">branch</span>: master
+</code></pre>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/博客/">博客</a><a href="/tags/杂谈/">杂谈</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/06/07/建立过程/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/06/07/建立过程/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/06/05/my-new-post/" title="博客创建好之后的第一篇文章" itemprop="url">博客创建好之后的第一篇文章</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="burningalive" target="_blank" itemprop="author">burningalive</a>
+		
+  <p class="article-time">
+    <time datetime="2015-06-05T08:56:05.000Z" itemprop="datePublished"> 发表于 2015-06-05</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h1 id="我为什么要创建这个博客">我为什么要创建这个博客</h1><p>关于写博客这件事，其实我一开始是没有概念的，起初在写代码的时候经常要百度各种各样的问题，发现很多回答都是写在博客中的，时间久了才似乎明白，这大概是个独立自主的网上笔记吧。<br>最近百度次数呈指数上升，访问的博客也每天不下10个。有的内容深邃，有的及其华丽，有与我年纪相仿却已坚持写了几年的，更多的还是那种大多数的普通博主————有眼界，有见识，有思维。这时候才发现我需要一个记录的地方，来反思一下我的生活，记录一下在代码学习过程中的发现、技巧，或者说是简单的笔记。这年头如果说一个开发者没有一个持久更新的博客，没有大量运用的github，那估计他也根本不算个开发者。我起步晚，但我想像诸位前辈学习，所以这也算是我前进路上的一小步。由于种种原因，我错误的购买了<a href="burningalive.cn">burningalive.cn</a>这个域名……而且绑定到了github上，所以很有可能哪天我的博客就莫名其妙的被墙了……无所谓，重要的是记录的这个过程。</p>
+<h1 id="博客创建的过程">博客创建的过程</h1><p>网上关于使用Hexo创建博客的教程已经有很多，可以看出都是作者对于自己遇到的情况进行筛选后的产物，这篇博客写于室友的笔记本，相比一段时间之后免不了又要在其他的电脑上进行配置，以下内容权当对于本人重建环境的备忘录</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/生活随笔/">生活随笔</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/杂谈/">杂谈</a>
+  </div>
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2015/06/05/my-new-post/#comments" class="ds-thread-count comments-count-link" data-thread-key="2015/06/05/my-new-post/" data-count-type="comments">&nbsp;</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
 
 
 
@@ -210,6 +369,8 @@
   <div class="rsspart">
 	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
 </div>
+
+  
 
 </aside>
 </div>
