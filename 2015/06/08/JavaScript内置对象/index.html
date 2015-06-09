@@ -17,7 +17,7 @@
 <meta property="og:url" content="burningalive.cn/2015/06/08/JavaScript内置对象/index.html">
 <meta property="og:site_name" content="静观·游进">
 <meta property="og:description" content="如题，是听JS内置对象课件时边听边记的笔记，基本将课件里的大部分内容都记下来了。">
-<meta property="og:updated_time" content="2015-06-09T13:14:02.640Z">
+<meta property="og:updated_time" content="2015-06-09T13:53:37.822Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="内置对象">
 <meta name="twitter:description" content="如题，是听JS内置对象课件时边听边记的笔记，基本将课件里的大部分内容都记下来了。">
@@ -92,7 +92,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Object"><span class="toc-number">2.</span> <span class="toc-text">Object</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-create"><span class="toc-number">2.1.</span> <span class="toc-text">Object.create</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-prototype-toString"><span class="toc-number">2.2.</span> <span class="toc-text">Object.prototype.toString</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-protorype-hasOwnProperty"><span class="toc-number">2.3.</span> <span class="toc-text">Object.protorype.hasOwnProperty</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Boolean"><span class="toc-number">3.</span> <span class="toc-text">Boolean</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#String"><span class="toc-number">4.</span> <span class="toc-text">String</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#String-prototype-indexOf"><span class="toc-number">4.1.</span> <span class="toc-text">String.prototype.indexOf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-prototype-replace"><span class="toc-number">4.2.</span> <span class="toc-text">String.prototype.replace</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Object"><span class="toc-number">2.</span> <span class="toc-text">Object</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-create"><span class="toc-number">2.1.</span> <span class="toc-text">Object.create</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-prototype-toString"><span class="toc-number">2.2.</span> <span class="toc-text">Object.prototype.toString</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-protorype-hasOwnProperty"><span class="toc-number">2.3.</span> <span class="toc-text">Object.protorype.hasOwnProperty</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Boolean"><span class="toc-number">3.</span> <span class="toc-text">Boolean</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#String"><span class="toc-number">4.</span> <span class="toc-text">String</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#String-prototype-indexOf"><span class="toc-number">4.1.</span> <span class="toc-text">String.prototype.indexOf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-prototype-replace"><span class="toc-number">4.2.</span> <span class="toc-text">String.prototype.replace</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-prototype-split"><span class="toc-number">4.3.</span> <span class="toc-text">String.prototype.split</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Number"><span class="toc-number">4.4.</span> <span class="toc-text">Number</span></a></li></ol></li></ol>
 		
 		</div>
 		
@@ -214,7 +214,32 @@ var idx = <span class="built_in">str</span>.indexOf<span class="params">(<span c
 <pre><code>var <span class="built_in">str</span> = <span class="string">"1 plus 1 equal 3"</span>；
 <span class="built_in">str</span> = <span class="built_in">str</span>.replace<span class="params">(<span class="string">"1"</span>,<span class="string">"2"</span>)</span>;
 <span class="built_in">str</span>.replace<span class="params">(/\d+/g,<span class="string">"$&amp; dollor"</span>)</span>;
-</code></pre>  
+</code></pre><h2 id="String-prototype-split">String.prototype.split</h2><ul>
+<li>功能<br>按分隔符将字符串分割成字符串数组</li>
+<li>语法<br><code>stringObj.split(separator,howmany)</code><br>第一个参数是一个分割符，第二个参数是数组长度。</li>
+<li>范例</li>
+</ul>
+<pre><code>var <span class="built_in">str</span> = <span class="string">"1 plus 2 equal 3"</span>;
+<span class="built_in">str</span>.split<span class="params">(<span class="string">" "</span>)</span>;
+</code></pre><p>这样，该字符串会被分割为<code>[&quot;1&quot;,&quot;plus&quot;,&quot;2&quot;,&quot;equal&quot;,&quot;3&quot;]</code>这样一个长度为5的字符串数组。</p>
+<pre><code>var <span class="built_in">str</span> = <span class="string">"1 plus 2 equal 3"</span>;
+<span class="built_in">str</span>.split<span class="params">(<span class="string">" "</span>, <span class="number">3</span>)</span>;
+</code></pre><p>这样会分割为`[“1”,”plus”,”2”]这样的长度3的字符串数组。</p>
+<pre><code>var <span class="built_in">str</span> = <span class="string">"1 plus 2 equal 3"</span>;
+<span class="built_in">str</span>.split<span class="params">(/\d+/)</span>;
+</code></pre><p>这样会分割为<code>[&quot;&quot;,&quot; plus &quot;,&quot; equal &quot;,&quot;&quot;]</code></p>
+<h2 id="Number">Number</h2><ul>
+<li>构造器对象说明<br>整形直接量，八进制(-0)直接量，十六进制(0x-)直接量，浮点型直接量。</li>
+<li>数字使用</li>
+</ul>
+<pre><code>10<span class="comment">;</span>
+1.2e5<span class="comment">;</span>
+var count = 0x10<span class="comment">;</span>
+var pi = new Number(3.14)<span class="comment">;</span>
+</code></pre><ul>
+<li>构造器对象属性、方法</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">prototype</span><br><span class="line">MAX_VALUE</span><br><span class="line">MIN_VALUE</span><br><span class="line"><span class="literal">NaN</span></span><br><span class="line">NEGATIVE_INFINITY</span><br><span class="line">POSITIVE_INFINITY</span><br></pre></td></tr></table></figure>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -272,7 +297,7 @@ var idx = <span class="built_in">str</span>.indexOf<span class="params">(<span c
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Object"><span class="toc-number">2.</span> <span class="toc-text">Object</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-create"><span class="toc-number">2.1.</span> <span class="toc-text">Object.create</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-prototype-toString"><span class="toc-number">2.2.</span> <span class="toc-text">Object.prototype.toString</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-protorype-hasOwnProperty"><span class="toc-number">2.3.</span> <span class="toc-text">Object.protorype.hasOwnProperty</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Boolean"><span class="toc-number">3.</span> <span class="toc-text">Boolean</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#String"><span class="toc-number">4.</span> <span class="toc-text">String</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#String-prototype-indexOf"><span class="toc-number">4.1.</span> <span class="toc-text">String.prototype.indexOf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-prototype-replace"><span class="toc-number">4.2.</span> <span class="toc-text">String.prototype.replace</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Object"><span class="toc-number">2.</span> <span class="toc-text">Object</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-create"><span class="toc-number">2.1.</span> <span class="toc-text">Object.create</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-prototype-toString"><span class="toc-number">2.2.</span> <span class="toc-text">Object.prototype.toString</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-protorype-hasOwnProperty"><span class="toc-number">2.3.</span> <span class="toc-text">Object.protorype.hasOwnProperty</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Boolean"><span class="toc-number">3.</span> <span class="toc-text">Boolean</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#String"><span class="toc-number">4.</span> <span class="toc-text">String</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#String-prototype-indexOf"><span class="toc-number">4.1.</span> <span class="toc-text">String.prototype.indexOf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-prototype-replace"><span class="toc-number">4.2.</span> <span class="toc-text">String.prototype.replace</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-prototype-split"><span class="toc-number">4.3.</span> <span class="toc-text">String.prototype.split</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Number"><span class="toc-number">4.4.</span> <span class="toc-text">Number</span></a></li></ol></li></ol>
  
   </div>
 
