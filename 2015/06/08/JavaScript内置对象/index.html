@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>内置对象 | 静观·游进</title>
+    <title>JavaScript的内置对象 | 静观·游进</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="burningalive">
@@ -13,13 +13,13 @@
     
     <meta name="description" content="如题，是听JS内置对象课件时边听边记的笔记，基本将课件里的大部分内容都记下来了。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="内置对象">
+<meta property="og:title" content="JavaScript的内置对象">
 <meta property="og:url" content="burningalive.cn/2015/06/08/JavaScript内置对象/index.html">
 <meta property="og:site_name" content="静观·游进">
 <meta property="og:description" content="如题，是听JS内置对象课件时边听边记的笔记，基本将课件里的大部分内容都记下来了。">
-<meta property="og:updated_time" content="2015-06-09T13:53:37.822Z">
+<meta property="og:updated_time" content="2015-06-09T16:21:43.855Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="内置对象">
+<meta name="twitter:title" content="JavaScript的内置对象">
 <meta name="twitter:description" content="如题，是听JS内置对象课件时边听边记的笔记，基本将课件里的大部分内容都记下来了。">
 
     
@@ -76,7 +76,7 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/06/08/JavaScript内置对象/" title="内置对象" itemprop="url">内置对象</a>
+      <a href="/2015/06/08/JavaScript内置对象/" title="JavaScript的内置对象" itemprop="url">JavaScript的内置对象</a>
   </h1>
   <p class="article-author">By
        
@@ -92,13 +92,18 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Object"><span class="toc-number">2.</span> <span class="toc-text">Object</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-create"><span class="toc-number">2.1.</span> <span class="toc-text">Object.create</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-prototype-toString"><span class="toc-number">2.2.</span> <span class="toc-text">Object.prototype.toString</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-protorype-hasOwnProperty"><span class="toc-number">2.3.</span> <span class="toc-text">Object.protorype.hasOwnProperty</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Boolean"><span class="toc-number">3.</span> <span class="toc-text">Boolean</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#String"><span class="toc-number">4.</span> <span class="toc-text">String</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#String-prototype-indexOf"><span class="toc-number">4.1.</span> <span class="toc-text">String.prototype.indexOf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-prototype-replace"><span class="toc-number">4.2.</span> <span class="toc-text">String.prototype.replace</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-prototype-split"><span class="toc-number">4.3.</span> <span class="toc-text">String.prototype.split</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Number"><span class="toc-number">4.4.</span> <span class="toc-text">Number</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Object"><span class="toc-number">2.</span> <span class="toc-text">Object</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-create"><span class="toc-number">2.1.</span> <span class="toc-text">Object.create</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-prototype-toString"><span class="toc-number">2.2.</span> <span class="toc-text">Object.prototype.toString</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-protorype-hasOwnProperty"><span class="toc-number">2.3.</span> <span class="toc-text">Object.protorype.hasOwnProperty</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Boolean"><span class="toc-number">3.</span> <span class="toc-text">Boolean</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#String"><span class="toc-number">4.</span> <span class="toc-text">String</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#String-prototype-indexOf"><span class="toc-number">4.1.</span> <span class="toc-text">String.prototype.indexOf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-prototype-replace"><span class="toc-number">4.2.</span> <span class="toc-text">String.prototype.replace</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-prototype-split"><span class="toc-number">4.3.</span> <span class="toc-text">String.prototype.split</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Number"><span class="toc-number">4.4.</span> <span class="toc-text">Number</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Number-prototype-toFixed"><span class="toc-number">4.5.</span> <span class="toc-text">Number.prototype.toFixed</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Array"><span class="toc-number">5.</span> <span class="toc-text">Array</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Array-protorype-splice"><span class="toc-number">5.1.</span> <span class="toc-text">Array.protorype.splice</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Array-prototype-forEach"><span class="toc-number">5.2.</span> <span class="toc-text">Array.prototype.forEach</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Function"><span class="toc-number">6.</span> <span class="toc-text">Function</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="简介">简介</h1><p>本部分介绍Js中13种标准内置对象，分为两类。<br>构造器对象：</p>
+		<h1 id="简介">简介</h1><p>本文介绍Js中13种标准内置对象，分为两类。</p>
+<p>构造器对象：</p>
 <blockquote>
-<p>Object<br>Boolean<br>String<br>Number<br>Function<br>Array<br>RegExp<br>Date<br>Error<br>其他对象：<br>Math<br>JSON<br>全局对象</p>
+<p>Object<br>Boolean<br>String<br>Number<br>Function<br>Array<br>RegExp<br>Date<br>Error</p>
+</blockquote>
+<p>其他对象：</p>
+<blockquote>
+<p>Math<br>JSON<br>全局对象</p>
 </blockquote>
 <h1 id="Object">Object</h1><ul>
 <li>构造器说明<br>Object是一组属性和方法的集合<br>String/Number/Boolean/Array/Date/Error构造器都是Object子类对象，继承Object源性对象属性和方法。</li>
@@ -230,7 +235,7 @@ var idx = <span class="built_in">str</span>.indexOf<span class="params">(<span c
 </code></pre><p>这样会分割为<code>[&quot;&quot;,&quot; plus &quot;,&quot; equal &quot;,&quot;&quot;]</code></p>
 <h2 id="Number">Number</h2><ul>
 <li>构造器对象说明<br>整形直接量，八进制(-0)直接量，十六进制(0x-)直接量，浮点型直接量。</li>
-<li>数字使用</li>
+<li>数字对象的使用</li>
 </ul>
 <pre><code>10<span class="comment">;</span>
 1.2e5<span class="comment">;</span>
@@ -239,7 +244,78 @@ var pi = new Number(3.14)<span class="comment">;</span>
 </code></pre><ul>
 <li>构造器对象属性、方法</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">prototype</span><br><span class="line">MAX_VALUE</span><br><span class="line">MIN_VALUE</span><br><span class="line"><span class="literal">NaN</span></span><br><span class="line">NEGATIVE_INFINITY</span><br><span class="line">POSITIVE_INFINITY</span><br></pre></td></tr></table></figure>  
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">prototype</span><br><span class="line">MAX_VALUE</span><br><span class="line">MIN_VALUE</span><br><span class="line"><span class="literal">NaN</span></span><br><span class="line">NEGATIVE_INFINITY</span><br><span class="line">POSITIVE_INFINITY</span><br></pre></td></tr></table></figure>
+<ul>
+<li>原型对象属性、方法</li>
+</ul>
+<pre><code><span class="function"><span class="keyword">constructor</span>
+<span class="title">toFixed</span>
+<span class="title">toExponential</span></span>
+</code></pre><h2 id="Number-prototype-toFixed">Number.prototype.toFixed</h2><ul>
+<li>功能<br>把Number四舍五入为指定小数位数的数字</li>
+<li>语法<br><code>numberObj.toFixed(num)</code><br>其中，num是要指定的小数位数。<ul>
+<li>范例</li>
+</ul>
+</li>
+</ul>
+<pre><code><span class="keyword">var</span> <span class="built_in">num</span> = <span class="number">13.37</span>;
+<span class="built_in">num</span>.toFixed(<span class="number">1</span>);
+</code></pre><p>这样会把13.37转化为13.4。</p>
+<h1 id="Array">Array</h1><ul>
+<li>构造器对象说明<br>用于定义数组对象</li>
+<li>创建数组<br>常用的创建数组方法如下。</li>
+</ul>
+<pre><code><span class="keyword">var</span> a = [<span class="number">1</span>,<span class="string">"abc"</span>, <span class="literal">true</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{}];
+<span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Array</span>();
+<span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">1</span>, <span class="string">"abc"</span>, <span class="literal">true</span>);
+</code></pre><ul>
+<li>构造器对象属性、方法<br><code>paototype</code>和<code>isArray</code>。<br><code>isArray</code>用于判断一个对象是否是数组。</li>
+<li>原型对象属性、方法</li>
+</ul>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">constructor</span></span><br><span class="line"><span class="title">splice</span></span><br><span class="line"><span class="title">forEach</span></span><br><span class="line"><span class="title">find</span></span><br><span class="line"><span class="title">concat</span></span><br><span class="line"><span class="title">pop</span></span><br><span class="line"><span class="title">push</span></span><br><span class="line"><span class="title">reverse</span></span><br><span class="line"><span class="title">shift</span></span><br><span class="line"><span class="title">slice</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>实例对象属性、方法<br>Array类型的实例对象都会有一个<code>length</code>的属性，用它获取数组的实际长度。</li>
+</ul>
+<h2 id="Array-protorype-splice">Array.protorype.splice</h2><ul>
+<li>功能<br>从数组中删除或添加元素，返回被删除的元素列表。</li>
+<li>语法<br><code>arrayObj.splice(start,deleteCount[,item1[,item2,…]]])</code><br>第一个参数是需要删除元素的下标，第二个参数是需要删除元素的个数，从第三个元素开始是我们需要添加的元素列表。</li>
+<li>范例</li>
+</ul>
+<pre><code><span class="variable"><span class="keyword">var</span> arr</span> = [<span class="string">"1"</span>,<span class="string">"2"</span>,<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"6"</span>];
+<span class="variable"><span class="keyword">var</span> ret</span> = arr.splice(<span class="number">2</span>,<span class="number">2</span>,<span class="string">"3"</span>,<span class="string">"4"</span>,<span class="string">"5"</span>);
+arr;
+</code></pre><p>在这里，将arr数组从<code>&quot;a&quot;</code>开始删除了两个元素，并在相应位置添加了三个元素<code>&quot;3&quot;,&quot;4&quot;,&quot;5&quot;</code>。该方法返回了被删除的元素数组并赋给<code>ret</code>，相应的，arr数组被更改为<code>[&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;]</code>.</p>
+<h2 id="Array-prototype-forEach">Array.prototype.forEach</h2><ul>
+<li>功能<br>遍历数组元素并调用回调函数。</li>
+<li>语法<br><code>arrayObj.forEach(callback[,thisArg])</code>这里的callback是一个回调函数。<br>回调函数定义如下：</li>
+</ul>
+<pre><code><span class="function"><span class="keyword">function</span></span> callback(<span class="keyword">value</span>, <span class="built_in">index</span>, arrayObject){……}
+</code></pre><p>它有三个参数。第一个参数是当前数组的元素值，第二个参数是当前元素的索引（第几个数），第三个参数是包含该元素的数组对象本身。</p>
+<ul>
+<li>范例</li>
+</ul>
+<pre><code>function logArray(value, index, array)
+{
+    console.log(value)<span class="comment">;</span>
+    console.log(value === array[index])<span class="comment">;</span>
+}
+[<span class="number">2</span>, <span class="number">5</span>, , <span class="number">9</span>].forEach(logArray)<span class="comment">;</span>
+</code></pre><p>此时，它的运行结果在F12的console里是：</p>
+<pre><code><span class="number">2</span>
+<span class="literal">true</span> <span class="comment">//第一次循环</span>
+<span class="number">5</span>
+<span class="literal">true</span> <span class="comment">//第二次循环</span>
+<span class="number">9</span>
+<span class="literal">true</span> <span class="comment">//第三次循环</span>
+</code></pre><p>它执行了三次回调，直接将空元素摒除掉了。引用回调函数时并不需要写上其所需要的三个参数，可以直接用，但是函数的定义中三个参数缺一不可。</p>
+<h1 id="Function">Function</h1><ul>
+<li>构造器说明<br>用于定义函数或者新对象构造器。</li>
+<li>实例化函数方法<blockquote>
+<p>1.对象实例化方法，使用new+function构造器创建一个函数add：<br><code>var add = new Function(&quot;i&quot;,&quot;j&quot;,&quot;return(i+j)&quot;);</code><br>2.更简单的函数关键字语句方法，直接用function关键字定义函数：<br><code>function add(i, j){return i+j;}</code></p>
+</blockquote>
+</li>
+</ul>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -261,7 +337,7 @@ var pi = new Number(3.14)<span class="comment">;</span>
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="burningalive.cn/2015/06/08/JavaScript内置对象/" data-title="内置对象 | 静观·游进" data-tsina="null" class="share clearfix">
+	  <div data-url="burningalive.cn/2015/06/08/JavaScript内置对象/" data-title="JavaScript的内置对象 | 静观·游进" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -287,7 +363,7 @@ var pi = new Number(3.14)<span class="comment">;</span>
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/06/08/JavaScript内置对象/" data-title="内置对象" data-url="burningalive.cn/2015/06/08/JavaScript内置对象/"></div>
+	<div class="ds-thread" data-thread-key="2015/06/08/JavaScript内置对象/" data-title="JavaScript的内置对象" data-url="burningalive.cn/2015/06/08/JavaScript内置对象/"></div>
 </section>
 
 
@@ -297,7 +373,7 @@ var pi = new Number(3.14)<span class="comment">;</span>
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Object"><span class="toc-number">2.</span> <span class="toc-text">Object</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-create"><span class="toc-number">2.1.</span> <span class="toc-text">Object.create</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-prototype-toString"><span class="toc-number">2.2.</span> <span class="toc-text">Object.prototype.toString</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-protorype-hasOwnProperty"><span class="toc-number">2.3.</span> <span class="toc-text">Object.protorype.hasOwnProperty</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Boolean"><span class="toc-number">3.</span> <span class="toc-text">Boolean</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#String"><span class="toc-number">4.</span> <span class="toc-text">String</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#String-prototype-indexOf"><span class="toc-number">4.1.</span> <span class="toc-text">String.prototype.indexOf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-prototype-replace"><span class="toc-number">4.2.</span> <span class="toc-text">String.prototype.replace</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-prototype-split"><span class="toc-number">4.3.</span> <span class="toc-text">String.prototype.split</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Number"><span class="toc-number">4.4.</span> <span class="toc-text">Number</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Object"><span class="toc-number">2.</span> <span class="toc-text">Object</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-create"><span class="toc-number">2.1.</span> <span class="toc-text">Object.create</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-prototype-toString"><span class="toc-number">2.2.</span> <span class="toc-text">Object.prototype.toString</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-protorype-hasOwnProperty"><span class="toc-number">2.3.</span> <span class="toc-text">Object.protorype.hasOwnProperty</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Boolean"><span class="toc-number">3.</span> <span class="toc-text">Boolean</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#String"><span class="toc-number">4.</span> <span class="toc-text">String</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#String-prototype-indexOf"><span class="toc-number">4.1.</span> <span class="toc-text">String.prototype.indexOf</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-prototype-replace"><span class="toc-number">4.2.</span> <span class="toc-text">String.prototype.replace</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#String-prototype-split"><span class="toc-number">4.3.</span> <span class="toc-text">String.prototype.split</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Number"><span class="toc-number">4.4.</span> <span class="toc-text">Number</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Number-prototype-toFixed"><span class="toc-number">4.5.</span> <span class="toc-text">Number.prototype.toFixed</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Array"><span class="toc-number">5.</span> <span class="toc-text">Array</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Array-protorype-splice"><span class="toc-number">5.1.</span> <span class="toc-text">Array.protorype.splice</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Array-prototype-forEach"><span class="toc-number">5.2.</span> <span class="toc-text">Array.prototype.forEach</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Function"><span class="toc-number">6.</span> <span class="toc-text">Function</span></a></li></ol>
  
   </div>
 
