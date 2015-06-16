@@ -1,0 +1,527 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>CSS随堂初学笔记 | 静观·游进</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="burningalive">
+    
+
+    
+    <meta name="description" content="看着看着CSS的课程就发现问题了——东西太多，讲得太快，没有重点，根本记不住。所以现在赶紧来做做笔记。deadline还有几天，得抓紧了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS随堂初学笔记">
+<meta property="og:url" content="burningalive.cn/2015/06/15/CSS随堂初学笔记/index.html">
+<meta property="og:site_name" content="静观·游进">
+<meta property="og:description" content="看着看着CSS的课程就发现问题了——东西太多，讲得太快，没有重点，根本记不住。所以现在赶紧来做做笔记。deadline还有几天，得抓紧了。">
+<meta property="og:updated_time" content="2015-06-15T13:49:55.427Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS随堂初学笔记">
+<meta name="twitter:description" content="看着看着CSS的课程就发现问题了——东西太多，讲得太快，没有重点，根本记不住。所以现在赶紧来做做笔记。deadline还有几天，得抓紧了。">
+
+    
+    <link rel="alternative" href="/atom.xml" title="静观·游进" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/mygithub.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/author.png">
+    <link rel="apple-touch-icon-precomposed" href="/img/author.png">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="静观·游进">静观·游进</a></h1>
+				<h2 class="blog-motto">专注code中   目前还是web前端C++菜鸟   努力练级</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">博文列表</a></li>
+					
+						<li><a href="/about">关于我</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:burningalive.cn">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/06/15/CSS随堂初学笔记/" title="CSS随堂初学笔记" itemprop="url">CSS随堂初学笔记</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="burningalive" target="_blank" itemprop="author">burningalive</a>
+		
+  <p class="article-time">
+    <time datetime="2015-06-15T06:19:18.000Z" itemprop="datePublished"> 发表于 2015-06-15</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#选择器"><span class="toc-number">1.</span> <span class="toc-text">选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#伪元素选择器"><span class="toc-number">1.1.</span> <span class="toc-text">伪元素选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#::first-letter"><span class="toc-number">1.1.1.</span> <span class="toc-text">::first-letter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#::first-line"><span class="toc-number">1.1.2.</span> <span class="toc-text">::first-line</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#::before/after"><span class="toc-number">1.1.3.</span> <span class="toc-text">::before/after</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#::selection"><span class="toc-number">1.1.4.</span> <span class="toc-text">::selection</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组合选择器"><span class="toc-number">1.2.</span> <span class="toc-text">组合选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#后代选择器"><span class="toc-number">1.2.1.</span> <span class="toc-text">后代选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子选择器"><span class="toc-number">1.2.2.</span> <span class="toc-text">子选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#兄弟选择器"><span class="toc-number">1.2.3.</span> <span class="toc-text">兄弟选择器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#选择器分组"><span class="toc-number">1.3.</span> <span class="toc-text">选择器分组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#继承"><span class="toc-number">1.4.</span> <span class="toc-text">继承</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#继承的优先级"><span class="toc-number">1.4.1.</span> <span class="toc-text">继承的优先级</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文本"><span class="toc-number">2.</span> <span class="toc-text">文本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#font-size_文字大小"><span class="toc-number">2.1.</span> <span class="toc-text">font-size 文字大小</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#font-family_字体名称"><span class="toc-number">2.2.</span> <span class="toc-text">font-family 字体名称</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#font-weight_字体加粗"><span class="toc-number">2.3.</span> <span class="toc-text">font-weight 字体加粗</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#font-style_字体倾斜"><span class="toc-number">2.4.</span> <span class="toc-text">font-style 字体倾斜</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#line-height_行距"><span class="toc-number">2.5.</span> <span class="toc-text">line-height 行距</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#font_快速设置的font中的多个样式"><span class="toc-number">2.6.</span> <span class="toc-text">font 快速设置的font中的多个样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#text-align_字体对齐方式"><span class="toc-number">2.7.</span> <span class="toc-text">text-align 字体对齐方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vertical-align_垂直对齐"><span class="toc-number">2.8.</span> <span class="toc-text">vertical-align 垂直对齐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#text-indent_文本缩进"><span class="toc-number">2.9.</span> <span class="toc-text">text-indent 文本缩进</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#white-space_空行、换行处理"><span class="toc-number">2.10.</span> <span class="toc-text">white-space 空行、换行处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#word-wrap_文本换行"><span class="toc-number">2.11.</span> <span class="toc-text">word-wrap 文本换行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#word-break_断词"><span class="toc-number">2.12.</span> <span class="toc-text">word-break 断词</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#text-shadow_文字阴影"><span class="toc-number">2.13.</span> <span class="toc-text">text-shadow 文字阴影</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#text-decoration_文本修饰"><span class="toc-number">2.14.</span> <span class="toc-text">text-decoration 文本修饰</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#text-overflow_文字溢出"><span class="toc-number">2.15.</span> <span class="toc-text">text-overflow 文字溢出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cursor_光标设置"><span class="toc-number">2.16.</span> <span class="toc-text">cursor 光标设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#inherit_强制继承"><span class="toc-number">2.17.</span> <span class="toc-text">inherit  强制继承</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<h1 id="选择器">选择器</h1><h2 id="伪元素选择器">伪元素选择器</h2><p>如果要凸显出类中的某个元素就要用上伪元素选择器。<br>推荐使用两个冒号。</p>
+<h3 id="::first-letter">::first-letter</h3><p><code>::first-letter{color:red;}</code>选择第一个元素。</p>
+<h3 id="::first-line">::first-line</h3><p><code>::first-line{}</code>用于选择页面中第一行。</p>
+<h3 id="::before/after">::before/after</h3><p><code>::before{content:&quot;…&quot;}</code> <code>after{content:&quot;…&quot;}</code><br>这两个伪元素选择器用于在某些元素之前/之后插入一些内容。</p>
+<h3 id="::selection">::selection</h3><p><code>::selection</code>伪元素选择器用于被选中的内容样式。可以更改选中内容的颜色什么的。</p>
+<h2 id="组合选择器">组合选择器</h2><h3 id="后代选择器">后代选择器</h3><p>如果只想选择某一个div中全部的h2,可以用后代选择器。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"main"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">h2</span>&gt;</span>标题一<span class="tag">&lt;/<span class="title">h2</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">h2</span>&gt;</span>标题二<span class="tag">&lt;/<span class="title">h2</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="title">p</span>&gt;</span>段落一<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><code>.main h2{color:red};</code>会将class为main的div中所有的h2选中。</p>
+<h3 id="子选择器">子选择器</h3><p>如果只想选择这个div子类中的h2选中，使用<code>.main&gt;h2{}</code>,这样只会选中main这个div下一级子类的h2。</p>
+<h3 id="兄弟选择器">兄弟选择器</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">h2</span>&gt;</span>标题<span class="tag">&lt;/<span class="title">h2</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">p</span>&gt;</span>段落一<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="title">p</span>&gt;</span>段落二<span class="tag">&lt;/<span class="title">p</span>&gt;</span></span><br><span class="line">	</span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>如果要选中这段代码中两个紧挨着中的某个标签的样式，使用兄弟选择器。注意这个紧挨着的关系不是嵌套……<br>比如要只选择h2下的第一个p，使用<code>h2+p{color:red;}</code><br>如果要选择h2下的所有p，使用<code>h2~p{color: red;}</code></p>
+<h2 id="选择器分组">选择器分组</h2><p>如果有好多标签要套用统一的样式，可以这么做：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">h1</span>,<span class="tag">h2</span>,<span class="tag">h3</span><span class="rules">&#123;<span class="rule"><span class="attribute">color</span>:<span class="value">gray</span></span>; <span class="rule"><span class="attribute">font-family</span>:<span class="value">sans-serif</span></span>;&#125;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="继承">继承</h2><p>在母元素上设置的样式大部分可以自动继承到子元素。但是有几个比较常见的例外：<code>background</code>、<code>border</code>、<code>position</code></p>
+<h3 id="继承的优先级">继承的优先级</h3><p>计算方法<br>a = 行内样式<br>b = Id选择器的数量<br>c = 类、伪类和属性选择器的数量<br>d = 标签选择器和伪元素选择器的数量<br>a&gt;b&gt;c&gt;d 依次降低。</p>
+<p>如果优先级相同，后出现的会覆盖掉之前出现的。<br>改变应用样式的先后顺序的几种方法：</p>
+<ol>
+<li>改变同等级选择器出现的先后顺序。</li>
+<li>提升选择器的优先级。</li>
+<li>在某一项属性之后加<code>!important</code>关键字，这样就会无视优先级。</li>
+</ol>
+<h1 id="文本">文本</h1><h2 id="font-size_文字大小">font-size 文字大小</h2><p>px、百分比、em什么的。</p>
+<h2 id="font-family_字体名称">font-family 字体名称</h2><p><generic-family>指一类字体，较为常用的只有两种：serif、sans-serif（衬线体和非衬线体）。可用逗号分隔取多个值。</generic-family></p>
+<h2 id="font-weight_字体加粗">font-weight 字体加粗</h2><p>值有<code>normal</code>普通、<code>bold</code>加粗。一般字体都支持400（普通），700（加粗）这两档。</p>
+<h2 id="font-style_字体倾斜">font-style 字体倾斜</h2><p>值有<code>normal</code>、<code>italic</code>倾斜、<code>oblique</code>当字体没设置斜体时强制倾斜，<code>oblique</code>一般不用。</p>
+<h2 id="line-height_行距">line-height 行距</h2><p>值有normal、<code>number</code>一般由浏览器决定，1.1~1.2左右、<code>length</code>px,em、百分比。默认行高是30px。如果设置行高为一个数字，行高则由字体大小的px乘以这个数字设置。</p>
+<h2 id="font_快速设置的font中的多个样式">font 快速设置的font中的多个样式</h2><p>设置顺序是：倾斜/加粗（可选） 字体大小（必填） 行高（可选，添加前必须在前面添加一个“/”） 字体（必填，可填多个值）。如果顺序错误或必填项缺少，font设置将不起作用。</p>
+<h2 id="text-align_字体对齐方式">text-align 字体对齐方式</h2><pre><code><span class="attribute">left</span>  <span class="attribute">right</span> <span class="comment">//左对齐  右对齐</span>
+<span class="value">center</span>  <span class="value">justify</span> <span class="comment">//居中  两端对齐</span>
+</code></pre><h2 id="vertical-align_垂直对齐">vertical-align 垂直对齐</h2><table><caption style="text-align: center;">vertical的属性</caption><tr><td>baseline</td><td>位于基线</td></tr><tr><td>sub</td><td>下标</td></tr><tr><td>super</td><td>上标</td></tr><tr><td>top</td><td>对齐到行高最高点</td></tr><tr><td>text-top</td><td>对齐到font-size最高点</td></tr><tr><td>middle</td><td>居中</td></tr><tr><td>bottom</td><td>对齐到行高最低点</td></tr><tr><td>text-bottom</td><td>文本最低点</td></tr><tr><td><code>&lt;percentage&gt;</code></td><td>以行高为参照的百分比</td></tr><tr><td><code>&lt;length&gt;</code></td><td>以baseline为起点，向上的px、em</td></tr></table>
+
+<h2 id="text-indent_文本缩进">text-indent 文本缩进</h2><table><tr><td><code>&lt;length&gt;</code></td><td>可填em、px(如果是正数向后缩进)</td></tr><tr><td><code>&lt;percentage&gt;</code></td><td>以一行容器的宽度为单位缩进百分比(正数向后缩)</td></tr></table>
+
+<h2 id="white-space_空行、换行处理">white-space 空行、换行处理</h2><p>用于设置换行不要保留，空格、tab要不要合并，是否要自动换行。<br><code>pre-wrap</code>会保留换行和空格，同时会自动换行，所以比较常用。</p>
+<table><tr><th></th><th>换行(New Lines)</th><th>空格tab</th><th>自动换行(Text Wrapping)</th></tr><tr><th>normal</th><td>collapse(折叠收缩)</td><td>collapse</td><td>wrap(自动换行)</td></tr><tr><th>nowrap</th><td>collapse</td><td>collapse</td><td>no wrap(行满不换行)</td></tr><tr><th>pre</th><td>preserve</td><td>preserve</td><td>no wrap</td></tr><tr><th>pre-wrap</th><td>preserve</td><td>preserve</td><td>wrap</td></tr><tr><th>pre-line</th><td>preserve</td><td>collapse</td><td>wrap</td></tr></table>
+
+<h2 id="word-wrap_文本换行">word-wrap 文本换行</h2><table><tr><td>normal</td><td>不换行</td>    </tr>    <tr><td>break-word</td>    <td>自动换行，中断单词</td>    </tr></table>
+
+<h2 id="word-break_断词">word-break 断词</h2><table><tr><td>normal</td><td>单词中间不允许断掉</td></tr><tr><td>keep-all</td><td>单词都不break</td>    </tr><tr><td>break-all</td>    <td>任意两个词都可以break掉</td></tr></table>
+
+<h2 id="text-shadow_文字阴影">text-shadow 文字阴影</h2><p>文字阴影可以不填。<br><code>&lt;length&gt;</code>后接2到3个值。分别是x，y，虚化值。<br><code>&lt;color&gt;</code>可选，不填就用字体颜色。</p>
+<h2 id="text-decoration_文本修饰">text-decoration 文本修饰</h2><p>修饰可以不填。<br>underline、overline、lind-through三个不冲突，分别是下划线上划线中划线。</p>
+<h2 id="text-overflow_文字溢出">text-overflow 文字溢出</h2><p>这个属性用来设置一行文字不能完全在一行显示时后面接省略号的效果。如果使用了<code>text-overflow</code>一般来说后面两个属性也必须如下设置：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="rule"><span class="attribute">text-overflow</span>:<span class="value">elipsis</span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">overflow</span>:<span class="value">hidden</span></span>;</span><br><span class="line"><span class="rule"><span class="attribute">white-space</span>:<span class="value">nowrap</span></span>;</span><br></pre></td></tr></table></figure></p>
+<h2 id="cursor_光标设置">cursor 光标设置</h2><p>可以用图片自定义鼠标形状，可以使用多个图片。<br>后面可以接如下值<code>[auto | default | none | help | pointer | zoom-in | zoom-out | move]</code><br>auto是自动处理，未设置时的默认样式。<br>default是普通的箭头光标。<br>none让光标消失。<br>help带个问号。<br>pointer是点连接的那个手指形状。<br>zoom-in/out是缩小，放大镜形状。<br>move分向两边的箭头，上下的箭头。</p>
+<p>当自定义图片失效是缺省使用pointer。<br>e.g.<code>cursor:pointer;</code> <code>cursor:url(xx.cur), pointer;</code></p>
+<h2 id="inherit_强制继承">inherit  强制继承</h2><p>不管父元素是什么，让子元素继承父元素的属性值。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/CSS/">CSS</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/CSS/">CSS</a><a href="/tags/前端/">前端</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="burningalive.cn/2015/06/15/CSS随堂初学笔记/" data-title="CSS随堂初学笔记 | 静观·游进" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/06/16/JavaScript数组方法/" title="JavaScript数组方法">
+  <strong>上一篇：</strong><br/>
+  <span>
+  JavaScript数组方法</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/06/11/html入门随堂笔记/"  title="html入门随堂笔记">
+ <strong>下一篇：</strong><br/> 
+ <span>html入门随堂笔记
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2015/06/15/CSS随堂初学笔记/" data-title="CSS随堂初学笔记" data-url="burningalive.cn/2015/06/15/CSS随堂初学笔记/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#选择器"><span class="toc-number">1.</span> <span class="toc-text">选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#伪元素选择器"><span class="toc-number">1.1.</span> <span class="toc-text">伪元素选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#::first-letter"><span class="toc-number">1.1.1.</span> <span class="toc-text">::first-letter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#::first-line"><span class="toc-number">1.1.2.</span> <span class="toc-text">::first-line</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#::before/after"><span class="toc-number">1.1.3.</span> <span class="toc-text">::before/after</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#::selection"><span class="toc-number">1.1.4.</span> <span class="toc-text">::selection</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组合选择器"><span class="toc-number">1.2.</span> <span class="toc-text">组合选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#后代选择器"><span class="toc-number">1.2.1.</span> <span class="toc-text">后代选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子选择器"><span class="toc-number">1.2.2.</span> <span class="toc-text">子选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#兄弟选择器"><span class="toc-number">1.2.3.</span> <span class="toc-text">兄弟选择器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#选择器分组"><span class="toc-number">1.3.</span> <span class="toc-text">选择器分组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#继承"><span class="toc-number">1.4.</span> <span class="toc-text">继承</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#继承的优先级"><span class="toc-number">1.4.1.</span> <span class="toc-text">继承的优先级</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文本"><span class="toc-number">2.</span> <span class="toc-text">文本</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#font-size_文字大小"><span class="toc-number">2.1.</span> <span class="toc-text">font-size 文字大小</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#font-family_字体名称"><span class="toc-number">2.2.</span> <span class="toc-text">font-family 字体名称</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#font-weight_字体加粗"><span class="toc-number">2.3.</span> <span class="toc-text">font-weight 字体加粗</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#font-style_字体倾斜"><span class="toc-number">2.4.</span> <span class="toc-text">font-style 字体倾斜</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#line-height_行距"><span class="toc-number">2.5.</span> <span class="toc-text">line-height 行距</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#font_快速设置的font中的多个样式"><span class="toc-number">2.6.</span> <span class="toc-text">font 快速设置的font中的多个样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#text-align_字体对齐方式"><span class="toc-number">2.7.</span> <span class="toc-text">text-align 字体对齐方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vertical-align_垂直对齐"><span class="toc-number">2.8.</span> <span class="toc-text">vertical-align 垂直对齐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#text-indent_文本缩进"><span class="toc-number">2.9.</span> <span class="toc-text">text-indent 文本缩进</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#white-space_空行、换行处理"><span class="toc-number">2.10.</span> <span class="toc-text">white-space 空行、换行处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#word-wrap_文本换行"><span class="toc-number">2.11.</span> <span class="toc-text">word-wrap 文本换行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#word-break_断词"><span class="toc-number">2.12.</span> <span class="toc-text">word-break 断词</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#text-shadow_文字阴影"><span class="toc-number">2.13.</span> <span class="toc-text">text-shadow 文字阴影</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#text-decoration_文本修饰"><span class="toc-number">2.14.</span> <span class="toc-text">text-decoration 文本修饰</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#text-overflow_文字溢出"><span class="toc-number">2.15.</span> <span class="toc-text">text-overflow 文字溢出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cursor_光标设置"><span class="toc-number">2.16.</span> <span class="toc-text">cursor 光标设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#inherit_强制继承"><span class="toc-number">2.17.</span> <span class="toc-text">inherit  强制继承</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/CSS/" title="CSS">CSS<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/HTML/" title="HTML">HTML<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/JavaScript/" title="JavaScript">JavaScript<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/生活随笔/" title="生活随笔">生活随笔<sup>1</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/前端/" title="前端">前端<sup>4</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/杂谈/" title="杂谈">杂谈<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/JavaScript/" title="JavaScript">JavaScript<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/HTML/" title="HTML">HTML<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/CSS/" title="CSS">CSS<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://peterz.cn/" target="_blank" title="宫莹的下午茶">Peter&#39;s Tea Time——只谈心，不撕逼</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.sutgroup.net" target="_blank" title="SUT Group">SUT Group</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 不停步 不懈怠 <br/>
+			学习思考  个人总结  笔记感悟</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		<a href="https://github.com/burningalive" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:burningalive.fff@live.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2015 
+		
+		<a href="/about" target="_blank" title="burningalive">burningalive</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#nothing"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"burningalive"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
