@@ -4,23 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>博客创建好之后的第一篇文章 | 静观·游进</title>
+    <title>JavaScript在浏览器中的应用 | 静观·游进</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="burningalive">
     
 
     
-    <meta name="description" content="其实一开始觉得我要写博客，我是拒绝的">
+    <meta name="description" content="记笔记的效率貌似不是很高的说呀。之前一直不太清楚JavaScript在浏览器中怎么和各种东西相结合使用，怎么去操纵页面。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="博客创建好之后的第一篇文章">
-<meta property="og:url" content="burningalive.cn/2015/06/05/第一篇文章/index.html">
+<meta property="og:title" content="JavaScript在浏览器中的应用">
+<meta property="og:url" content="burningalive.cn/2015/06/17/JavaScript在浏览器中的应用/index.html">
 <meta property="og:site_name" content="静观·游进">
-<meta property="og:description" content="其实一开始觉得我要写博客，我是拒绝的">
-<meta property="og:updated_time" content="2015-06-07T14:01:58.834Z">
+<meta property="og:description" content="记笔记的效率貌似不是很高的说呀。之前一直不太清楚JavaScript在浏览器中怎么和各种东西相结合使用，怎么去操纵页面。">
+<meta property="og:updated_time" content="2015-06-17T11:23:47.234Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="博客创建好之后的第一篇文章">
-<meta name="twitter:description" content="其实一开始觉得我要写博客，我是拒绝的">
+<meta name="twitter:title" content="JavaScript在浏览器中的应用">
+<meta name="twitter:description" content="记笔记的效率貌似不是很高的说呀。之前一直不太清楚JavaScript在浏览器中怎么和各种东西相结合使用，怎么去操纵页面。">
 
     
     <link rel="alternative" href="/atom.xml" title="静观·游进" type="application/atom+xml">
@@ -76,14 +76,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/06/05/第一篇文章/" title="博客创建好之后的第一篇文章" itemprop="url">博客创建好之后的第一篇文章</a>
+      <a href="/2015/06/17/JavaScript在浏览器中的应用/" title="JavaScript在浏览器中的应用" itemprop="url">JavaScript在浏览器中的应用</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="burningalive" target="_blank" itemprop="author">burningalive</a>
 		
   <p class="article-time">
-    <time datetime="2015-06-05T08:56:05.000Z" itemprop="datePublished"> 发表于 2015-06-05</time>
+    <time datetime="2015-06-17T06:47:12.000Z" itemprop="datePublished"> 发表于 2015-06-17</time>
     
   </p>
 </header>
@@ -92,13 +92,49 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#我为什么要创建这个博客"><span class="toc-number">1.</span> <span class="toc-text">我为什么要创建这个博客</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#博客创建的过程"><span class="toc-number">2.</span> <span class="toc-text">博客创建的过程</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#全局对象"><span class="toc-number">1.</span> <span class="toc-text">全局对象</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#document"><span class="toc-number">2.</span> <span class="toc-text">document</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML中的JavaScript"><span class="toc-number">3.</span> <span class="toc-text">HTML中的JavaScript</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="我为什么要创建这个博客">我为什么要创建这个博客</h1><p>关于写博客这件事，其实我一开始是没有概念的，起初在写代码的时候经常要百度各种各样的问题，发现很多回答都是写在博客中的，时间久了才似乎明白，这大概是个独立自主的网上笔记吧。<br>最近百度次数呈指数上升，访问的博客也每天不下10个。有的内容深邃，有的及其华丽，有与我年纪相仿却已坚持写了几年的，更多的还是那种大多数的普通博主————有眼界，有见识，有思维。这时候才发现我需要一个记录的地方，来反思一下我的生活，记录一下在代码学习过程中的发现、技巧，或者说是简单的笔记。这年头如果说一个开发者没有一个持久更新的博客，没有大量运用的github，那估计他也根本不算个开发者。我起步晚，但我想像诸位前辈学习，所以这也算是我前进路上的一小步。由于种种原因，我错误的购买了<a href="burningalive.cn">burningalive.cn</a>这个域名……而且绑定到了github上，所以很有可能哪天我的博客就莫名其妙的被墙了……无所谓，重要的是记录的这个过程。</p>
-<h1 id="博客创建的过程">博客创建的过程</h1><p>网上关于使用Hexo创建博客的教程已经有很多，可以看出都是作者对于自己遇到的情况进行筛选后的产物，这篇博客写于室友的笔记本，相比一段时间之后免不了又要在其他的电脑上进行配置，以下内容权当对于本人重建环境的备忘录</p>
-  
+		<h1 id="全局对象">全局对象</h1><ul>
+<li>浏览器中的全局对象是window。</li>
+<li>所有在浏览器中声明的全局对象都隶属于window这个对象。</li>
+</ul>
+<h1 id="document">document</h1><ul>
+<li>window.document表示浏览器窗口中的HTML页面。</li>
+<li>document.write()将内容写入页面。</li>
+<li>页面中的元素就是document里的成员，来试试将document中的所有东西都写出来看看：<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(x <span class="keyword">in</span> <span class="built_in">document</span>)</span><br><span class="line">	<span class="built_in">document</span>.write(x+<span class="string">"&lt;br/&gt;"</span><span class="string">");</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="HTML中的JavaScript">HTML中的JavaScript</h1><ul>
+<li>在<script></script>标记中。</li>
+<li>在<script>的src属性或archive指定的外部文件中。</li>
+<li>在某个HTML标记的事件处理器中。</li>
+</ul>
+<h2 id="外部JavaScript文件">外部JavaScript文件</h2><ul>
+<li><code>&lt;script src=&quot;util.js&quot;&gt;&lt;/script&gt;</code></li>
+<li>一个纯粹的代码文件，没有HTML标记。</li>
+</ul>
+<h2 id="事件处理器">事件处理器</h2><p><code>&lt;p onMouseOver=&quot;alert(&#39;hi&#39;);&quot;&gt;</code>表示鼠标经过后作出的动作。<br>双引号中如果要出现引号就要使用单引号。<br>`onMouseOut=”alert(‘bye’);”表示鼠标不在这个标签所作出的动作。<br>还有很多以后有时间添加。</p>
+<h2 id="body事件">body事件</h2><ul>
+<li>onLoad是页面在装载显示之前做的事情。</li>
+<li>onUnload是页面在关掉之前做的事情。<br>这两句必须用在body标签中。</li>
+</ul>
+<h2 id="简单对话框">简单对话框</h2><ul>
+<li>alert()</li>
+<li>confirm()会提示yes或no，并随着不同的选择返回true/false。</li>
+<li>prompt()可以输入</li>
+</ul>
+<h2 id="浏览器下方的状态栏">浏览器下方的状态栏</h2><ul>
+<li>status=<br>当此行生效时会使状态栏显示出相应文字。</li>
+<li>defaultStatus=</li>
+</ul>
+<h2 id="定时器">定时器</h2><ul>
+<li>setInterval()函数。<br>该函数用于设置时间间隔（interval=间隔），接受两个参数。第一个参数是要执行的动作，第二个参数是时间间隔（以毫秒为单位）。<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="fortran"></span><br><span class="line"><span class="built_in">count</span> = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span></span> update()&#123;</span><br><span class="line">	<span class="keyword">if</span>( <span class="built_in">count</span> &gt;= <span class="number">0</span>)</span><br><span class="line">	<span class="keyword">status</span> = <span class="built_in">count</span>--;</span><br><span class="line">&#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">body</span> <span class="attribute">onLoad</span>=<span class="value">'setInterval(update() ,1000)'</span> &gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这样有某些浏览器可以看出来左下角会从10开始倒计时。</p>
+</script></li></ul>  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -110,7 +146,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="burningalive.cn/2015/06/05/第一篇文章/" data-title="博客创建好之后的第一篇文章 | 静观·游进" data-tsina="null" class="share clearfix">
+	  <div data-url="burningalive.cn/2015/06/17/JavaScript在浏览器中的应用/" data-title="JavaScript在浏览器中的应用 | 静观·游进" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -123,20 +159,20 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/06/07/Js的数据类型/" title="JavaScript的数据类型">
-  <strong>上一篇：</strong><br/>
-  <span>
-  JavaScript的数据类型</span>
+
+<div class="next">
+<a href="/2015/06/16/JavaScript对象/"  title="JavaScript中的对象">
+ <strong>下一篇：</strong><br/> 
+ <span>JavaScript中的对象
+</span>
 </a>
 </div>
-
 
 </nav>
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/06/05/第一篇文章/" data-title="博客创建好之后的第一篇文章" data-url="burningalive.cn/2015/06/05/第一篇文章/"></div>
+	<div class="ds-thread" data-thread-key="2015/06/17/JavaScript在浏览器中的应用/" data-title="JavaScript在浏览器中的应用" data-url="burningalive.cn/2015/06/17/JavaScript在浏览器中的应用/"></div>
 </section>
 
 
@@ -146,7 +182,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#我为什么要创建这个博客"><span class="toc-number">1.</span> <span class="toc-text">我为什么要创建这个博客</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#博客创建的过程"><span class="toc-number">2.</span> <span class="toc-text">博客创建的过程</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#全局对象"><span class="toc-number">1.</span> <span class="toc-text">全局对象</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#document"><span class="toc-number">2.</span> <span class="toc-text">document</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML中的JavaScript"><span class="toc-number">3.</span> <span class="toc-text">HTML中的JavaScript</span></a></li></ol>
  
   </div>
 

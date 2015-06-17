@@ -4,23 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>博客创建好之后的第一篇文章 | 静观·游进</title>
+    <title>JavaScript中的对象 | 静观·游进</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="burningalive">
     
 
     
-    <meta name="description" content="其实一开始觉得我要写博客，我是拒绝的">
+    <meta name="description" content="一直以来都觉得js中的对象好迷……果然啊，js严格来说不算是中面向对象的语言。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="博客创建好之后的第一篇文章">
-<meta property="og:url" content="burningalive.cn/2015/06/05/第一篇文章/index.html">
+<meta property="og:title" content="JavaScript中的对象">
+<meta property="og:url" content="burningalive.cn/2015/06/16/JavaScript对象/index.html">
 <meta property="og:site_name" content="静观·游进">
-<meta property="og:description" content="其实一开始觉得我要写博客，我是拒绝的">
-<meta property="og:updated_time" content="2015-06-07T14:01:58.834Z">
+<meta property="og:description" content="一直以来都觉得js中的对象好迷……果然啊，js严格来说不算是中面向对象的语言。">
+<meta property="og:updated_time" content="2015-06-17T06:46:38.394Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="博客创建好之后的第一篇文章">
-<meta name="twitter:description" content="其实一开始觉得我要写博客，我是拒绝的">
+<meta name="twitter:title" content="JavaScript中的对象">
+<meta name="twitter:description" content="一直以来都觉得js中的对象好迷……果然啊，js严格来说不算是中面向对象的语言。">
 
     
     <link rel="alternative" href="/atom.xml" title="静观·游进" type="application/atom+xml">
@@ -76,14 +76,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/06/05/第一篇文章/" title="博客创建好之后的第一篇文章" itemprop="url">博客创建好之后的第一篇文章</a>
+      <a href="/2015/06/16/JavaScript对象/" title="JavaScript中的对象" itemprop="url">JavaScript中的对象</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="burningalive" target="_blank" itemprop="author">burningalive</a>
 		
   <p class="article-time">
-    <time datetime="2015-06-05T08:56:05.000Z" itemprop="datePublished"> 发表于 2015-06-05</time>
+    <time datetime="2015-06-16T11:39:22.000Z" itemprop="datePublished"> 发表于 2015-06-16</time>
     
   </p>
 </header>
@@ -92,12 +92,18 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#我为什么要创建这个博客"><span class="toc-number">1.</span> <span class="toc-text">我为什么要创建这个博客</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#博客创建的过程"><span class="toc-number">2.</span> <span class="toc-text">博客创建的过程</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#创建对象"><span class="toc-number">1.</span> <span class="toc-text">创建对象</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#遍历对象中所有属性"><span class="toc-number">2.</span> <span class="toc-text">遍历对象中所有属性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#构造函数"><span class="toc-number">3.</span> <span class="toc-text">构造函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#prototype"><span class="toc-number">4.</span> <span class="toc-text">prototype</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="我为什么要创建这个博客">我为什么要创建这个博客</h1><p>关于写博客这件事，其实我一开始是没有概念的，起初在写代码的时候经常要百度各种各样的问题，发现很多回答都是写在博客中的，时间久了才似乎明白，这大概是个独立自主的网上笔记吧。<br>最近百度次数呈指数上升，访问的博客也每天不下10个。有的内容深邃，有的及其华丽，有与我年纪相仿却已坚持写了几年的，更多的还是那种大多数的普通博主————有眼界，有见识，有思维。这时候才发现我需要一个记录的地方，来反思一下我的生活，记录一下在代码学习过程中的发现、技巧，或者说是简单的笔记。这年头如果说一个开发者没有一个持久更新的博客，没有大量运用的github，那估计他也根本不算个开发者。我起步晚，但我想像诸位前辈学习，所以这也算是我前进路上的一小步。由于种种原因，我错误的购买了<a href="burningalive.cn">burningalive.cn</a>这个域名……而且绑定到了github上，所以很有可能哪天我的博客就莫名其妙的被墙了……无所谓，重要的是记录的这个过程。</p>
-<h1 id="博客创建的过程">博客创建的过程</h1><p>网上关于使用Hexo创建博客的教程已经有很多，可以看出都是作者对于自己遇到的情况进行筛选后的产物，这篇博客写于室友的笔记本，相比一段时间之后免不了又要在其他的电脑上进行配置，以下内容权当对于本人重建环境的备忘录</p>
+		<h1 id="创建对象">创建对象</h1><p>创建对象的方式很类似于数组，直接<code>var o = new Object();</code><br>或者向其他OOP语言的构造方法那样写<code>var circle = {x:0, y:0, radius: 2};</code><br>对象中的属性可以随时添加。只要<code>var *** = new Object(){};</code>之后像为元素赋值那样写就会在对象中添加属性。<br>删除对象属性使用<code>delete</code>关键字</p>
+<h1 id="遍历对象中所有属性">遍历对象中所有属性</h1><p>使用<code>for (var x in o)</code>，O是一个对象，x会记录下每次for遍历对象属性的名字。在调用时使用以下方式。<br><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">o.name = <span class="string">"John Mike"</span>;</span><br><span class="line">o.age = <span class="number">30</span>;</span><br><span class="line">o.salary = <span class="number">300</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> x <span class="keyword">in</span> o)&#123;</span><br><span class="line">	alert(o[x]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>可以看出在调用o的属性时使用了类似于数组的语法。</p>
+<h1 id="构造函数">构造函数</h1><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Rect</span><span class="params">(w,h)</span></span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.width = w;</span><br><span class="line">	<span class="keyword">this</span>.height= h;</span><br><span class="line">	<span class="keyword">this</span>.area = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>.width * <span class="keyword">this</span>.height;&#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> r = <span class="keyword">new</span> Rect(<span class="number">5</span>,<span class="number">10</span>);</span><br><span class="line">alert(r.area());</span><br></pre></td></tr></table></figure>
+<p>基本上类似于c++，java的构造函数。新建对象时使用new关键字。</p>
+<h1 id="prototype">prototype</h1><p>在声明对象构造器的时候可以用.prototype来创建对象构造器，这部分类似于使用了static，是不同对象默认共享的。但是也有不同之处，不同的static是统一一致的，而不同的.prototype方法是独立的，只是在一开始被赋了统一的初值。但是这样可能会在对数组操作时出现一些问题。<br><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function <span class="keyword">Person</span>(name, age, job)&#123;</span><br><span class="line">	this.name = name;</span><br><span class="line">	this.age = age;</span><br><span class="line">	this.job = job;</span><br><span class="line">	this.friends = &#123;<span class="string">"Shelby"</span>,<span class="string">"Court"</span>&#125;;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">Person</span>.prototype = &#123;</span><br><span class="line">	constructor: <span class="keyword">Person</span>,</span><br><span class="line">	sayName: function()&#123;</span><br><span class="line">	alert(this.name);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line">var person1 = new <span class="keyword">Person</span>(<span class="string">"Nicholas"</span>,29,<span class="string">"Software Engineer"</span>);</span><br><span class="line">var person2 = new <span class="keyword">Person</span>(<span class="string">"Greg"</span>,29,<span class="string">"Doctor"</span>);</span><br><span class="line">alert(person1.friends === person2.friends);</span><br><span class="line">alert(person1.friends === person2.sayName);</span><br></pre></td></tr></table></figure></p>
+<p>向对象原型中添加属性时可以分别用单个语句<code>Person.prototype.*** = ***</code>这样的结构来表示。若要批量添加则要使用<br><figure class="highlight"><figcaption><span>= &#123;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">constructor: Person, &#10;***: ***,&#10; ***: *** ;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>句式好迷暂时不明白这么写的深层次意义……<br>等以后明白了回来补全吧……时间宝贵没法在这里耽搁了。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -110,7 +116,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="burningalive.cn/2015/06/05/第一篇文章/" data-title="博客创建好之后的第一篇文章 | 静观·游进" data-tsina="null" class="share clearfix">
+	  <div data-url="burningalive.cn/2015/06/16/JavaScript对象/" data-title="JavaScript中的对象 | 静观·游进" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -124,19 +130,27 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/06/07/Js的数据类型/" title="JavaScript的数据类型">
+ <a href="/2015/06/17/JavaScript在浏览器中的应用/" title="JavaScript在浏览器中的应用">
   <strong>上一篇：</strong><br/>
   <span>
-  JavaScript的数据类型</span>
+  JavaScript在浏览器中的应用</span>
 </a>
 </div>
 
+
+<div class="next">
+<a href="/2015/06/16/JavaScript数组方法/"  title="JavaScript数组方法">
+ <strong>下一篇：</strong><br/> 
+ <span>JavaScript数组方法
+</span>
+</a>
+</div>
 
 </nav>
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/06/05/第一篇文章/" data-title="博客创建好之后的第一篇文章" data-url="burningalive.cn/2015/06/05/第一篇文章/"></div>
+	<div class="ds-thread" data-thread-key="2015/06/16/JavaScript对象/" data-title="JavaScript中的对象" data-url="burningalive.cn/2015/06/16/JavaScript对象/"></div>
 </section>
 
 
@@ -146,7 +160,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#我为什么要创建这个博客"><span class="toc-number">1.</span> <span class="toc-text">我为什么要创建这个博客</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#博客创建的过程"><span class="toc-number">2.</span> <span class="toc-text">博客创建的过程</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#创建对象"><span class="toc-number">1.</span> <span class="toc-text">创建对象</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#遍历对象中所有属性"><span class="toc-number">2.</span> <span class="toc-text">遍历对象中所有属性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#构造函数"><span class="toc-number">3.</span> <span class="toc-text">构造函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#prototype"><span class="toc-number">4.</span> <span class="toc-text">prototype</span></a></li></ol>
  
   </div>
 

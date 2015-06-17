@@ -11,16 +11,16 @@
     
 
     
-    <meta name="description" content="知识总结   心情记录">
+    <meta name="description" content="在这里简单记一下JavaScript中数组中常用的方法。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript数组方法">
 <meta property="og:url" content="burningalive.cn/2015/06/16/JavaScript数组方法/index.html">
 <meta property="og:site_name" content="静观·游进">
-<meta property="og:description" content="知识总结   心情记录">
-<meta property="og:updated_time" content="2015-06-16T10:06:17.056Z">
+<meta property="og:description" content="在这里简单记一下JavaScript中数组中常用的方法。">
+<meta property="og:updated_time" content="2015-06-16T11:42:24.782Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript数组方法">
-<meta name="twitter:description" content="知识总结   心情记录">
+<meta name="twitter:description" content="在这里简单记一下JavaScript中数组中常用的方法。">
 
     
     <link rel="alternative" href="/atom.xml" title="静观·游进" type="application/atom+xml">
@@ -92,11 +92,22 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#堆栈操作"><span class="toc-number">1.</span> <span class="toc-text">堆栈操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-push_压栈"><span class="toc-number">2.</span> <span class="toc-text">.push 压栈</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-pop_取栈"><span class="toc-number">3.</span> <span class="toc-text">.pop 取栈</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-shift_队列操作"><span class="toc-number">4.</span> <span class="toc-text">.shift 队列操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-sort_排序"><span class="toc-number">5.</span> <span class="toc-text">.sort 排序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-reverse_颠倒数组顺序"><span class="toc-number">6.</span> <span class="toc-text">.reverse 颠倒数组顺序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-concat_连接"><span class="toc-number">7.</span> <span class="toc-text">.concat 连接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-slice_截取"><span class="toc-number">8.</span> <span class="toc-text">.slice 截取</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-splice_删除并插入元素"><span class="toc-number">9.</span> <span class="toc-text">.splice  删除并插入元素</span></a></li></ol>
 		
 		</div>
 		
-		  
+		<h1 id="堆栈操作">堆栈操作</h1><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var colors = <span class="keyword">new</span> Array();</span><br><span class="line">var <span class="keyword">count</span> = colors.<span class="keyword">push</span>(<span class="string">"red"</span>,<span class="string">"green"</span>);</span><br><span class="line">alert(<span class="keyword">count</span>);</span><br><span class="line"><span class="keyword">count</span> = colors.<span class="keyword">push</span>(<span class="string">"black"</span>);</span><br><span class="line">alert(<span class="keyword">count</span>);</span><br><span class="line">var item = colors.<span class="keyword">pop</span>();</span><br><span class="line">alert(item);</span><br><span class="line">alert(colors.length);</span><br></pre></td></tr></table></figure>
+<p>简要的以这段代码为例看一下js堆栈操作的方法。</p>
+<h1 id="-push_压栈">.push 压栈</h1><p><code>.push</code>方法后可以接多个参数，该方法会将参数压入调用该方法的数组中，返回压栈成功的值数。</p>
+<h1 id="-pop_取栈">.pop 取栈</h1><p><code>.pop</code>方法会将数组所在栈中的最后一个元素取出，并返回取出的这个值。</p>
+<h1 id="-shift_队列操作">.shift 队列操作</h1><p><code>.shift</code>方法会将数组所在栈排在最前面的元素取出，并返回取出的这个值。</p>
+<h1 id="-sort_排序">.sort 排序</h1><p><code>.sort</code>方法不接受参数时默认将一个数组中的元素依次从小到大排序。<br>如果想让<code>.sort</code>方法将数组中元素从大到小排序需要自己写一个比较的函数，如下：<br><figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> compare(<span class="keyword">value</span><span class="number">1</span>, <span class="keyword">value</span><span class="number">2</span>)&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">value</span><span class="number">1</span> &lt; <span class="keyword">value</span><span class="number">2</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	&#125; <span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">value</span><span class="number">1</span> &gt; <span class="keyword">value</span><span class="number">2</span>)&#123;</span><br><span class="line">		<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">var values = [<span class="number">2</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">15</span>, <span class="number">23</span>];</span><br><span class="line">values.sort(compare);</span><br></pre></td></tr></table></figure></p>
+<p>将这个函数作为一个值当做<code>.sort</code>方法即可。</p>
+<h1 id="-reverse_颠倒数组顺序">.reverse 颠倒数组顺序</h1><p>如描述，<code>.reverse()</code>的方法会让一个数组顺序颠倒。</p>
+<h1 id="-concat_连接">.concat 连接</h1><p>如果要将数组和某些元素连接起来可以用<code>.concat</code>方法：<br><code>colors = colors.concat(&quot;yellow&quot;,[&quot;black&quot;,&quot;brown&quot;]);</code><br>这样colors后面就接上了yellow,black,brown。</p>
+<h1 id="-slice_截取">.slice 截取</h1><p><code>.slice</code>接受1~n个参数。<br>如果只输入了一个参数，就会将这个参数之前的元素全部截掉。<br>如果输入了两个参数，会将这两个参数之间的元素记录下来并返回。<br>在数组调用。参数1表示数组第一个元素，-1表示倒数第一个元素，以此类推。<br>请注意，该方法并不会修改数组，而是返回一个子数组.如果想删除数组中的一段元素，应该使用方法 Array.splice()。</p>
+<h1 id="-splice_删除并插入元素">.splice  删除并插入元素</h1><p><code>.splice</code>后接受1~3个参数，会修改本字符串，返回值为删除的所有元素。<br>第一个参数表示从第几个开始删除元素，只填第一个参数会删去这个参数所代表的元素之后的所有元素。<br>第二个参数表示从第一个参数的起始点开始要删除几个元素，不填第三个参数使<code>.splice</code>方法只具有删除元素的功能。<br>第三个及之后的参数表示从第一个参数开始的位置要依次向数组中插入的内容。</p>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -121,11 +132,19 @@
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2015/06/16/JavaScript对象/" title="JavaScript中的对象">
+  <strong>上一篇：</strong><br/>
+  <span>
+  JavaScript中的对象</span>
+</a>
+</div>
+
 
 <div class="next">
-<a href="/2015/06/15/CSS随堂初学笔记/"  title="CSS随堂初学笔记">
+<a href="/2015/06/15/CSS随堂初学笔记/"  title="CSS初学笔记">
  <strong>下一篇：</strong><br/> 
- <span>CSS随堂初学笔记
+ <span>CSS初学笔记
 </span>
 </a>
 </div>
@@ -144,7 +163,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#堆栈操作"><span class="toc-number">1.</span> <span class="toc-text">堆栈操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-push_压栈"><span class="toc-number">2.</span> <span class="toc-text">.push 压栈</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-pop_取栈"><span class="toc-number">3.</span> <span class="toc-text">.pop 取栈</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-shift_队列操作"><span class="toc-number">4.</span> <span class="toc-text">.shift 队列操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-sort_排序"><span class="toc-number">5.</span> <span class="toc-text">.sort 排序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-reverse_颠倒数组顺序"><span class="toc-number">6.</span> <span class="toc-text">.reverse 颠倒数组顺序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-concat_连接"><span class="toc-number">7.</span> <span class="toc-text">.concat 连接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-slice_截取"><span class="toc-number">8.</span> <span class="toc-text">.slice 截取</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#-splice_删除并插入元素"><span class="toc-number">9.</span> <span class="toc-text">.splice  删除并插入元素</span></a></li></ol>
  
   </div>
 
@@ -158,23 +177,13 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/CSS/" title="CSS">CSS<sup>1</sup></a></li>
+		
 		  
 		
 		  
-			<li><a href="/categories/HTML/" title="HTML">HTML<sup>1</sup></a></li>
-		  
 		
 		  
-			<li><a href="/categories/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
-		  
 		
-		  
-			<li><a href="/categories/JavaScript/" title="JavaScript">JavaScript<sup>2</sup></a></li>
-		  
-		
-		  
-			<li><a href="/categories/生活随笔/" title="生活随笔">生活随笔<sup>1</sup></a></li>
 		  
 		
 		</ul>
@@ -182,37 +191,6 @@
 
 
   
-<div class="tagslist">
-	<p class="asidetitle">标签</p>
-		<ul class="clearfix">
-		
-			
-				<li><a href="/tags/前端/" title="前端">前端<sup>4</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/杂谈/" title="杂谈">杂谈<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/JavaScript/" title="JavaScript">JavaScript<sup>2</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/HTML/" title="HTML">HTML<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/CSS/" title="CSS">CSS<sup>1</sup></a></li>
-			
-		
-		</ul>
-</div>
-
 
   <div class="linkslist">
   <p class="asidetitle">友情链接</p>
