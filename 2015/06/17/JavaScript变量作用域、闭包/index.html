@@ -4,23 +4,24 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>博客创建好之后的第一篇文章 | 静观·游进</title>
+    <title>JavaScript变量作用域、闭包 | 静观·游进</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="burningalive">
     
 
     
-    <meta name="description" content="其实一开始觉得我要写博客，我是拒绝的">
+    <meta name="description" content="万恶的JS课程又更新了……速度太快了得加紧记啦（然而这部分听起来真是好吃力）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="博客创建好之后的第一篇文章">
-<meta property="og:url" content="burningalive.cn/2015/06/05/第一篇文章/index.html">
+<meta property="og:title" content="JavaScript变量作用域、闭包">
+<meta property="og:url" content="burningalive.cn/2015/06/17/JavaScript变量作用域、闭包/index.html">
 <meta property="og:site_name" content="静观·游进">
-<meta property="og:description" content="其实一开始觉得我要写博客，我是拒绝的">
-<meta property="og:updated_time" content="2015-06-07T14:01:58.834Z">
+<meta property="og:description" content="万恶的JS课程又更新了……速度太快了得加紧记啦（然而这部分听起来真是好吃力）">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/e7c360e8jw1et7gy95aq7j206x076wes.jpg">
+<meta property="og:updated_time" content="2015-06-17T15:13:34.572Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="博客创建好之后的第一篇文章">
-<meta name="twitter:description" content="其实一开始觉得我要写博客，我是拒绝的">
+<meta name="twitter:title" content="JavaScript变量作用域、闭包">
+<meta name="twitter:description" content="万恶的JS课程又更新了……速度太快了得加紧记啦（然而这部分听起来真是好吃力）">
 
     
     <link rel="alternative" href="/atom.xml" title="静观·游进" type="application/atom+xml">
@@ -76,14 +77,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/06/05/第一篇文章/" title="博客创建好之后的第一篇文章" itemprop="url">博客创建好之后的第一篇文章</a>
+      <a href="/2015/06/17/JavaScript变量作用域、闭包/" title="JavaScript变量作用域、闭包" itemprop="url">JavaScript变量作用域、闭包</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="burningalive" target="_blank" itemprop="author">burningalive</a>
 		
   <p class="article-time">
-    <time datetime="2015-06-05T08:56:05.000Z" itemprop="datePublished"> 发表于 2015-06-05</time>
+    <time datetime="2015-06-17T14:25:22.000Z" itemprop="datePublished"> 发表于 2015-06-17</time>
     
   </p>
 </header>
@@ -92,12 +93,37 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#我为什么要创建这个博客"><span class="toc-number">1.</span> <span class="toc-text">我为什么要创建这个博客</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#博客创建的过程"><span class="toc-number">2.</span> <span class="toc-text">博客创建的过程</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#变量作用域"><span class="toc-number">1.</span> <span class="toc-text">变量作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#静态作用域"><span class="toc-number">1.1.</span> <span class="toc-text">静态作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态作用域"><span class="toc-number">1.2.</span> <span class="toc-text">动态作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Js变量作用举"><span class="toc-number">1.3.</span> <span class="toc-text">Js变量作用举</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#词法环境"><span class="toc-number">1.4.</span> <span class="toc-text">词法环境</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<h1 id="我为什么要创建这个博客">我为什么要创建这个博客</h1><p>关于写博客这件事，其实我一开始是没有概念的，起初在写代码的时候经常要百度各种各样的问题，发现很多回答都是写在博客中的，时间久了才似乎明白，这大概是个独立自主的网上笔记吧。<br>最近百度次数呈指数上升，访问的博客也每天不下10个。有的内容深邃，有的及其华丽，有与我年纪相仿却已坚持写了几年的，更多的还是那种大多数的普通博主————有眼界，有见识，有思维。这时候才发现我需要一个记录的地方，来反思一下我的生活，记录一下在代码学习过程中的发现、技巧，或者说是简单的笔记。这年头如果说一个开发者没有一个持久更新的博客，没有大量运用的github，那估计他也根本不算个开发者。我起步晚，但我想像诸位前辈学习，所以这也算是我前进路上的一小步。由于种种原因，我错误的购买了<a href="burningalive.cn">burningalive.cn</a>这个域名……而且绑定到了github上，所以很有可能哪天我的博客就莫名其妙的被墙了……无所谓，重要的是记录的这个过程。</p>
-<h1 id="博客创建的过程">博客创建的过程</h1><p>网上关于使用Hexo创建博客的教程已经有很多，可以看出都是作者对于自己遇到的情况进行筛选后的产物，这篇博客写于室友的笔记本，相比一段时间之后免不了又要在其他的电脑上进行配置，以下内容权当对于本人重建环境的备忘录</p>
+		<h1 id="变量作用域">变量作用域</h1><p>下面的例子都用这段代码来演示：<br><figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var x = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span>&#123;</span></span><br><span class="line">	alert<span class="params">(x)</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span><span class="params">()</span>&#123;</span></span><br><span class="line">	var x=<span class="number">20</span>;</span><br><span class="line">	foo<span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line">bar<span class="params">()</span>;</span><br></pre></td></tr></table></figure></p>
+<h2 id="静态作用域">静态作用域</h2><ul>
+<li>又称词法作用域，在编译阶段就可以决定变量的引用。</li>
+<li>由程序定义的位置决定。</li>
+</ul>
+<p>这里在两个函数外定义了x，它的作用域位于全局，可以用于foo函数和bar函数。foo的外层作用域就是全局作用域，构成了一种嵌套关系，内部没有定义x。bar函数当中定义了x。<br>foo函数要调用x时沿着这条作用域的链去找x，所以使用的是全局环境下的x。</p>
+<h2 id="动态作用域">动态作用域</h2><p>与程序运行时刻决定，一般使用动态栈来管理。<br>在bar函数中调用的x栈顺序如图<img src="http://ww2.sinaimg.cn/large/e7c360e8jw1et7gy95aq7j206x076wes.jpg" alt=""><br>按照程序向下执行的顺序依次在栈中创建了如图的元素，最后调用foo函数来获取x的值时函数会取栈最后添加的x:20。</p>
+<h2 id="Js变量作用举">Js变量作用举</h2><ul>
+<li>js使用静态作用域</li>
+<li>js没有块级作用域 只有函数中的作用域</li>
+<li>ES5中使用词法环境管理静态作用域</li>
+</ul>
+<h2 id="词法环境">词法环境</h2><ul>
+<li>组成</li>
+</ul>
+<ol>
+<li>环境记录（形参、变量、函数等）</li>
+<li>对外部词法环境的引用（outer）</li>
+</ol>
+<ul>
+<li>一段代码开始执行前，先初始化词法环境</li>
+</ul>
+<ol>
+<li>形参</li>
+<li>函数定义</li>
+<li>变量定义</li>
+</ol>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -105,13 +131,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/生活随笔/">生活随笔</a>
+  <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/杂谈/">杂谈</a>
+  <span></span> <a href="/tags/JavaScript/">JavaScript</a><a href="/tags/前端/">前端</a>
   </div>
 
 </div>
@@ -120,7 +146,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="burningalive.cn/2015/06/05/第一篇文章/" data-title="博客创建好之后的第一篇文章 | 静观·游进" data-tsina="null" class="share clearfix">
+	  <div data-url="burningalive.cn/2015/06/17/JavaScript变量作用域、闭包/" data-title="JavaScript变量作用域、闭包 | 静观·游进" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -133,20 +159,20 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/06/07/Js的数据类型/" title="JavaScript的数据类型">
-  <strong>上一篇：</strong><br/>
-  <span>
-  JavaScript的数据类型</span>
+
+<div class="next">
+<a href="/2015/06/17/JavaScript在浏览器中的应用/"  title="JavaScript在浏览器中的应用">
+ <strong>下一篇：</strong><br/> 
+ <span>JavaScript在浏览器中的应用
+</span>
 </a>
 </div>
-
 
 </nav>
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/06/05/第一篇文章/" data-title="博客创建好之后的第一篇文章" data-url="burningalive.cn/2015/06/05/第一篇文章/"></div>
+	<div class="ds-thread" data-thread-key="2015/06/17/JavaScript变量作用域、闭包/" data-title="JavaScript变量作用域、闭包" data-url="burningalive.cn/2015/06/17/JavaScript变量作用域、闭包/"></div>
 </section>
 
 
@@ -156,7 +182,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#我为什么要创建这个博客"><span class="toc-number">1.</span> <span class="toc-text">我为什么要创建这个博客</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#博客创建的过程"><span class="toc-number">2.</span> <span class="toc-text">博客创建的过程</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#变量作用域"><span class="toc-number">1.</span> <span class="toc-text">变量作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#静态作用域"><span class="toc-number">1.1.</span> <span class="toc-text">静态作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态作用域"><span class="toc-number">1.2.</span> <span class="toc-text">动态作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Js变量作用举"><span class="toc-number">1.3.</span> <span class="toc-text">Js变量作用举</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#词法环境"><span class="toc-number">1.4.</span> <span class="toc-text">词法环境</span></a></li></ol></li></ol>
  
   </div>
 
