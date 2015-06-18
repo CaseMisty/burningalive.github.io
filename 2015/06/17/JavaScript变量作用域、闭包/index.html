@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>JavaScript变量作用域、闭包 | 静观·游进</title>
+    <title>JavaScript变量作用域、闭包 | FFF·静观·游进</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="burningalive">
@@ -15,16 +15,16 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript变量作用域、闭包">
 <meta property="og:url" content="burningalive.cn/2015/06/17/JavaScript变量作用域、闭包/index.html">
-<meta property="og:site_name" content="静观·游进">
+<meta property="og:site_name" content="FFF·静观·游进">
 <meta property="og:description" content="万恶的JS课程又更新了……速度太快了得加紧记啦（然而这部分听起来真是好吃力）">
 <meta property="og:image" content="http://ww2.sinaimg.cn/large/e7c360e8jw1et7gy95aq7j206x076wes.jpg">
-<meta property="og:updated_time" content="2015-06-17T15:13:34.572Z">
+<meta property="og:updated_time" content="2015-06-18T04:26:39.704Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript变量作用域、闭包">
 <meta name="twitter:description" content="万恶的JS课程又更新了……速度太快了得加紧记啦（然而这部分听起来真是好吃力）">
 
     
-    <link rel="alternative" href="/atom.xml" title="静观·游进" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="FFF·静观·游进" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/mygithub.ico">
@@ -42,8 +42,8 @@
 <div>
 		
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="静观·游进">静观·游进</a></h1>
-				<h2 class="blog-motto">专注code中   目前还是web前端C++菜鸟   努力练级</h2>
+				<h1 class="site-name"><a href="/" title="FFF·静观·游进">FFF·静观·游进</a></h1>
+				<h2 class="blog-motto">专注code中的大学僧   目前还是web前端C++菜鸟   努力练级的资深团员</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -103,7 +103,7 @@
 <li>由程序定义的位置决定。</li>
 </ul>
 <p>这里在两个函数外定义了x，它的作用域位于全局，可以用于foo函数和bar函数。foo的外层作用域就是全局作用域，构成了一种嵌套关系，内部没有定义x。bar函数当中定义了x。<br>foo函数要调用x时沿着这条作用域的链去找x，所以使用的是全局环境下的x。</p>
-<h2 id="动态作用域">动态作用域</h2><p>与程序运行时刻决定，一般使用动态栈来管理。<br>在bar函数中调用的x栈顺序如图<img src="http://ww2.sinaimg.cn/large/e7c360e8jw1et7gy95aq7j206x076wes.jpg" alt=""><br>按照程序向下执行的顺序依次在栈中创建了如图的元素，最后调用foo函数来获取x的值时函数会取栈最后添加的x:20。</p>
+<h2 id="动态作用域">动态作用域</h2><p>与程序运行时刻决定，一般使用动态栈来管理，Js并不使用动态作用域。<br>如果使用动态作用域的思路来考虑：在bar函数中调用的x栈顺序如图<img src="http://ww2.sinaimg.cn/large/e7c360e8jw1et7gy95aq7j206x076wes.jpg" alt=""><br>按照程序向下执行的顺序依次在栈中创建了如图的元素，最后调用foo函数来获取x的值时函数会取栈最后添加的x:20。</p>
 <h2 id="Js变量作用举">Js变量作用举</h2><ul>
 <li>js使用静态作用域</li>
 <li>js没有块级作用域 只有函数中的作用域</li>
@@ -123,6 +123,10 @@
 <li>形参</li>
 <li>函数定义</li>
 <li>变量定义</li>
+</ol>
+<p>词法环境的构造过程</p>
+<ol>
+<li>全局环境初始化</li>
 </ol>
   
 	</div>
@@ -146,7 +150,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="burningalive.cn/2015/06/17/JavaScript变量作用域、闭包/" data-title="JavaScript变量作用域、闭包 | 静观·游进" data-tsina="null" class="share clearfix">
+	  <div data-url="burningalive.cn/2015/06/17/JavaScript变量作用域、闭包/" data-title="JavaScript变量作用域、闭包 | FFF·静观·游进" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -159,6 +163,14 @@
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2015/06/18/我在做什么/" title="五月总结：远方-更大的可能世界">
+  <strong>上一篇：</strong><br/>
+  <span>
+  五月总结：远方-更大的可能世界</span>
+</a>
+</div>
+
 
 <div class="next">
 <a href="/2015/06/17/JavaScript在浏览器中的应用/"  title="JavaScript在浏览器中的应用">
@@ -212,7 +224,7 @@
 		  
 		
 		  
-			<li><a href="/categories/生活随笔/" title="生活随笔">生活随笔<sup>1</sup></a></li>
+			<li><a href="/categories/生活随笔/" title="生活随笔">生活随笔<sup>2</sup></a></li>
 		  
 		
 		</ul>
@@ -233,7 +245,7 @@
 			
 		
 			
-				<li><a href="/tags/杂谈/" title="杂谈">杂谈<sup>2</sup></a></li>
+				<li><a href="/tags/杂谈/" title="杂谈">杂谈<sup>3</sup></a></li>
 			
 		
 			
@@ -246,6 +258,10 @@
 		
 			
 				<li><a href="/tags/CSS/" title="CSS">CSS<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/生活随笔/" title="生活随笔">生活随笔<sup>1</sup></a></li>
 			
 		
 		</ul>
