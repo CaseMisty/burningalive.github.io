@@ -4,24 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>JavaScript变量作用域、闭包 | Burningalive</title>
+    <title>随便写在大二上半学期 | Burningalive</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="burningalive">
     
 
     
-    <meta name="description" content="万恶的JS课程又更新了……速度太快了得加紧记啦（然而这部分听起来真是好吃力）">
+    <meta name="description" content="刚建好这个博客是在什么时候？大约是6月中旬吧。嚄，时间过得也真是快，还有一天就11月了。被荒废的时间果然过得快。谨在这10月份的最后一天，让我反思，让我忏悔，让我总结一下这将近半年中的种种。似乎上一次使用markdown编辑器的景象还在眼前，当时我穿着短裤坐在咖啡馆里用曾经室友的笔记本敲下一行行字。如今室内已逾零下5度，我包的粽子般坐在新寝室中，脑海里碎语思绪如末日后的偶尔卷起的风暴般，零碎杂乱，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript变量作用域、闭包">
-<meta property="og:url" content="burningalive.cn/2015/06/17/JavaScript变量作用域、闭包/index.html">
+<meta property="og:title" content="随便写在大二上半学期">
+<meta property="og:url" content="burningalive.cn/2015/10/31/我在做什么/index.html">
 <meta property="og:site_name" content="Burningalive">
-<meta property="og:description" content="万恶的JS课程又更新了……速度太快了得加紧记啦（然而这部分听起来真是好吃力）">
-<meta property="og:image" content="http://ww2.sinaimg.cn/large/e7c360e8jw1et7gy95aq7j206x076wes.jpg">
-<meta property="og:updated_time" content="2015-06-18T04:26:40.000Z">
+<meta property="og:description" content="刚建好这个博客是在什么时候？大约是6月中旬吧。嚄，时间过得也真是快，还有一天就11月了。被荒废的时间果然过得快。谨在这10月份的最后一天，让我反思，让我忏悔，让我总结一下这将近半年中的种种。似乎上一次使用markdown编辑器的景象还在眼前，当时我穿着短裤坐在咖啡馆里用曾经室友的笔记本敲下一行行字。如今室内已逾零下5度，我包的粽子般坐在新寝室中，脑海里碎语思绪如末日后的偶尔卷起的风暴般，零碎杂乱，">
+<meta property="og:updated_time" content="2015-10-31T18:40:06.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript变量作用域、闭包">
-<meta name="twitter:description" content="万恶的JS课程又更新了……速度太快了得加紧记啦（然而这部分听起来真是好吃力）">
+<meta name="twitter:title" content="随便写在大二上半学期">
+<meta name="twitter:description" content="刚建好这个博客是在什么时候？大约是6月中旬吧。嚄，时间过得也真是快，还有一天就11月了。被荒废的时间果然过得快。谨在这10月份的最后一天，让我反思，让我忏悔，让我总结一下这将近半年中的种种。似乎上一次使用markdown编辑器的景象还在眼前，当时我穿着短裤坐在咖啡馆里用曾经室友的笔记本敲下一行行字。如今室内已逾零下5度，我包的粽子般坐在新寝室中，脑海里碎语思绪如末日后的偶尔卷起的风暴般，零碎杂乱，">
 
     
     <link rel="alternative" href="/atom.xml" title="Burningalive" type="application/atom+xml">
@@ -72,14 +71,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/06/17/JavaScript变量作用域、闭包/" title="JavaScript变量作用域、闭包" itemprop="url">JavaScript变量作用域、闭包</a>
+      <a href="/2015/10/31/我在做什么/" title="随便写在大二上半学期" itemprop="url">随便写在大二上半学期</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="burningalive" target="_blank" itemprop="author">burningalive</a>
 		
   <p class="article-time">
-    <time datetime="2015-06-17T14:25:22.000Z" itemprop="datePublished"> 发表于 2015-06-17</time>
+    <time datetime="2015-10-30T16:54:39.000Z" itemprop="datePublished"> 发表于 2015-10-31</time>
     
   </p>
 </header>
@@ -88,41 +87,24 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#变量作用域"><span class="toc-number">1.</span> <span class="toc-text">变量作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#静态作用域"><span class="toc-number">1.1.</span> <span class="toc-text">静态作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态作用域"><span class="toc-number">1.2.</span> <span class="toc-text">动态作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Js变量作用举"><span class="toc-number">1.3.</span> <span class="toc-text">Js变量作用举</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#词法环境"><span class="toc-number">1.4.</span> <span class="toc-text">词法环境</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#关于我的博客"><span class="toc-number">1.</span> <span class="toc-text">关于我的博客</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="变量作用域">变量作用域</h1><p>下面的例子都用这段代码来演示：<br><figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var x = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span>&#123;</span></span><br><span class="line">	alert<span class="params">(x)</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span><span class="params">()</span>&#123;</span></span><br><span class="line">	var x=<span class="number">20</span>;</span><br><span class="line">	foo<span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line">bar<span class="params">()</span>;</span><br></pre></td></tr></table></figure></p>
-<h2 id="静态作用域">静态作用域</h2><ul>
-<li>又称词法作用域，在编译阶段就可以决定变量的引用。</li>
-<li>由程序定义的位置决定。</li>
-</ul>
-<p>这里在两个函数外定义了x，它的作用域位于全局，可以用于foo函数和bar函数。foo的外层作用域就是全局作用域，构成了一种嵌套关系，内部没有定义x。bar函数当中定义了x。<br>foo函数要调用x时沿着这条作用域的链去找x，所以使用的是全局环境下的x。</p>
-<h2 id="动态作用域">动态作用域</h2><p>与程序运行时刻决定，一般使用动态栈来管理，Js并不使用动态作用域。<br>如果使用动态作用域的思路来考虑：在bar函数中调用的x栈顺序如图<img src="http://ww2.sinaimg.cn/large/e7c360e8jw1et7gy95aq7j206x076wes.jpg" alt=""><br>按照程序向下执行的顺序依次在栈中创建了如图的元素，最后调用foo函数来获取x的值时函数会取栈最后添加的x:20。</p>
-<h2 id="Js变量作用举">Js变量作用举</h2><ul>
-<li>js使用静态作用域</li>
-<li>js没有块级作用域 只有函数中的作用域</li>
-<li>ES5中使用词法环境管理静态作用域</li>
-</ul>
-<h2 id="词法环境">词法环境</h2><ul>
-<li>组成</li>
-</ul>
-<ol>
-<li>环境记录（形参、变量、函数等）</li>
-<li>对外部词法环境的引用（outer）</li>
-</ol>
-<ul>
-<li>一段代码开始执行前，先初始化词法环境</li>
-</ul>
-<ol>
-<li>形参</li>
-<li>函数定义</li>
-<li>变量定义</li>
-</ol>
-<p>词法环境的构造过程</p>
-<ol>
-<li>全局环境初始化</li>
-</ol>
+		<p>引：刚建好这个博客是在什么时候？大约是6月中旬吧。嚄，时间过得也真是快，还有一天就11月了。被荒废的时间果然过得快。谨在这10月份的最后一天，让我反思，让我忏悔，让我总结一下这将近半年中的种种。似乎上一次使用markdown编辑器的景象还在眼前，当时我穿着短裤坐在咖啡馆里用曾经室友的笔记本敲下一行行字。如今室内已逾零下5度，我包的粽子般带着兜帽坐在所谓的新寝室中，脑海里碎语思绪如末日后的遽然卷起的风暴般，零碎杂乱，只是往面门上吹，往衣服里灌，伸手一拿捏，不易，也看不出碎片原来究竟是什么东西。乱，心中一片乱。<br>鉴于此，我不想细分什么标题，只顾是想到什么写什么，估计前后文会各种辞不达意，混乱不堪吧。</p>
+<hr>
+<h1 id="关于我的博客">关于我的博客</h1><p>方才偶然看到，上次的博文里有一句话我这样写：“我似乎记了太多的纯技术文章，却没停下来思考。”</p>
+<p>现在来看，真应回去直接给我赏一耳光，脚踩在脸上跺三脚吼一句：清醒点！你一个方才创建两周的博客里与别人家连续记录了好几年，月月更新的纯技术博客还差了将近上千个小时的火候呢！你的思考又在哪里，嗯！？这肤浅的思考深度，低下的执行力又有什么用？踏实学习，老老实实看书，别说些愚蠢的话逗自己玩！嗐，你算哪根葱啊？</p>
+<p>好么，这才5个月，现在看到上学期末写的这些文字，已在笑当时的幼稚。该说这是我太善变，心境易动三分钟热度？还是该鼓励自己说回头意识到幼稚是种成长？或者是：连续艰难的不间断自习编程之重量早已压得灵魂早已透不过气，肉体却毫不在意的告诉自己“这状态极好”，直到8月，终于，背叛，我奔向灵魂早已向往的虚空，一时间灵魂充满了欢愉之轻，忘记了当时的愿望，于是在舒适中心安理得过到了现在？细思极恐，前几个问号打的已没有意义，一无所有的轻松会令生命失去其原该有的重量，度过了撒比般高中三年的我早点儿该明白要警惕这种的背叛艰难之重换来的生命之轻，背叛的终极就是虚空，是生命意义的完全消失，这终极会让人难以承受却难以察觉。（为什么说着说着感觉就变成了读后感）于是猛的想起去找一下舒适区的描述：很多时候人会给自己构建一个幻觉，就是能够舒适的迎接各种别人觉得费力和痛苦的挑战，活在心里和生活的舒适区，一遍遍重复着自以为了不起却实际上微不足道的努力，让自己获得虚假的成就感和快乐，沉浸其中不做更有意义的事。我似乎就是那个人，我行将灭亡，还唯独执着追求愉悦的电击。</p>
+<p>什么是有意义的事？等一会儿想起来再说吧。</p>
+<p>如此看来，时间也真是易荒难拾，上一次尝试动笔写博还是8月初。这得从7月中旬开始放暑假算起：如愿买了属于自己的笔记本的我火急火燎的配置好了hexo的框架，然而这似乎只是一股自己想要证明给母亲看的一股含着表演作用的热情所支配的行为。配好之后的我也只是懒散放纵，没有输下过这段<code>hexo n</code>去尝试写点儿什么。8月，人在北京光顾着在金台夕照练跑酷挥洒汗水提升膂力，却把6月那阵要好好钻研JavaScript与web开发的念想，随着一天出的近2L汗流没了，就这曾经的宏伟计划没能实现而言，似乎我本该为自己赍志而殁而扼腕跌足（毕竟交了那么多学费，也投入了那么多的时间精力），我却心安理得吃着火锅哼着歌，成天不知多快活。似乎就完全忘记了我曾经还在博客上随处可见信誓旦旦的宣称：思考 学习 不停步。</p>
+<p>那个“我”又冲过来了，阴着脸歇斯底里笑，指着我鼻子：“你这是诈骗！你知道么？你这个虚伪的人！”</p>
+<p>好吧，打着打着字蓦地发现自己似乎负能量爆棚了，但又何妨？心中这些不足轻重的戏言碎语，哪怕我感觉再不舒服，又有谁想去瞥一眼呢？不说事无巨细一律认真的听着我啰啰嗦嗦磨磨唧唧，只消连关心的心情都不屑有。最后要去解决问题，去面对的还是自己，所谓独立思考的用武之地不就于此么。从别人听来的价值观是他们的，自己用行为检验，用独立的思考烙印在心里后才是自己的。不过在数个难寐之夜我的行为，可能只能用瞎想来形容，或者说是默想。如陀思妥耶夫斯基在《卡拉马佐夫兄弟》中形容的：</p>
+<blockquote>
+<p>这既非深思，亦无熟虑，而是一种默想。他在无比深沉的孤寂中迷了路，于是站在那儿，似乎陷入了沉思。但他并无所思，而是在默想。如果有人推他一下，他会猛然一震，如梦初醒般瞧着你，但是什么也不明白。诚然,他随机就会定下神来，可要是问他站在这儿想什么来着，他肯定什么都记不得了，然而他一定会把刚才默想时笼罩自己的那份印象在心中藏起来。这些印象对他来说弥足珍贵，他一定会强强地、甚至无意识地把它们积攒起来——至于理由何在，目的何在，他当然也不知道。或许把多年的印象攒够了，又找一只他会撇下一切，长途跋涉去耶路撒冷修身自救。或许他会一把火烧了自己的家园。默想者在老百姓中间有的是。</p>
+</blockquote>
+<p>哪怕是瞎想，积攒多年又未尝不是对看世界的态度的一次次补充？正是在不断的瞎想里，一次次的认识自己的无知，一次次笑当时的幼稚。</p>
+<p>之前我认为沟通与交流能解决几乎所有人际交往间的问题——与别人意见的分歧、</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -130,13 +112,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  <a class="article-category-link" href="/categories/生活随笔/">生活随笔</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/JavaScript/">JavaScript</a><a href="/tags/前端/">前端</a>
+  <span></span> <a href="/tags/生活随笔/">生活随笔</a>
   </div>
 
 </div>
@@ -145,7 +127,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="burningalive.cn/2015/06/17/JavaScript变量作用域、闭包/" data-title="JavaScript变量作用域、闭包 | Burningalive" data-tsina="null" class="share clearfix">
+	  <div data-url="burningalive.cn/2015/10/31/我在做什么/" data-title="随便写在大二上半学期 | Burningalive" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -159,7 +141,7 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/10/31/我在做什么/" title="随便写在大二上半学期">
+ <a href="/2015/10/31/随便写在大二上半学期/" title="随便写在大二上半学期">
   <strong>上一篇：</strong><br/>
   <span>
   随便写在大二上半学期</span>
@@ -168,9 +150,9 @@
 
 
 <div class="next">
-<a href="/2015/06/17/JavaScript在浏览器中的应用/"  title="JavaScript在浏览器中的应用">
+<a href="/2015/06/17/JavaScript变量作用域、闭包/"  title="JavaScript变量作用域、闭包">
  <strong>下一篇：</strong><br/> 
- <span>JavaScript在浏览器中的应用
+ <span>JavaScript变量作用域、闭包
 </span>
 </a>
 </div>
@@ -179,7 +161,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/06/17/JavaScript变量作用域、闭包/" data-title="JavaScript变量作用域、闭包" data-url="burningalive.cn/2015/06/17/JavaScript变量作用域、闭包/"></div>
+	<div class="ds-thread" data-thread-key="2015/10/31/我在做什么/" data-title="随便写在大二上半学期" data-url="burningalive.cn/2015/10/31/我在做什么/"></div>
 </section>
 
 
@@ -189,7 +171,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#变量作用域"><span class="toc-number">1.</span> <span class="toc-text">变量作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#静态作用域"><span class="toc-number">1.1.</span> <span class="toc-text">静态作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态作用域"><span class="toc-number">1.2.</span> <span class="toc-text">动态作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Js变量作用举"><span class="toc-number">1.3.</span> <span class="toc-text">Js变量作用举</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#词法环境"><span class="toc-number">1.4.</span> <span class="toc-text">词法环境</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#关于我的博客"><span class="toc-number">1.</span> <span class="toc-text">关于我的博客</span></a></li></ol>
  
   </div>
 
