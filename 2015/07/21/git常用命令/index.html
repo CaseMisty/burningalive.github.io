@@ -1,0 +1,527 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>git常用命令 | Burningalive</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="burningalive">
+    
+
+    
+    <meta name="description" content="想多用github？不会git的命令怎么行。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git常用命令">
+<meta property="og:url" content="burningalive.cn/2015/07/21/git常用命令/index.html">
+<meta property="og:site_name" content="Burningalive">
+<meta property="og:description" content="想多用github？不会git的命令怎么行。">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/e7c360e8jw1eual27423nj20c107h75b.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/e7c360e8jw1eual12iajej20pe0cognz.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/e7c360e8jw1euao3iivbbj20e408wabi.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/e7c360e8jw1euao3iivbbj20e408wabi.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/e7c360e8jw1euaql9ly2qj20di04mdgi.jpg">
+<meta property="og:image" content="http://ww4.sinaimg.cn/large/e7c360e8jw1euaqisecsvj20mf07i76j.jpg">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/e7c360e8jw1euar0ik5cej20j206dwfk.jpg">
+<meta property="og:image" content="http://ww3.sinaimg.cn/large/e7c360e8jw1euar8xxodsj20gw04hgms.jpg">
+<meta property="og:updated_time" content="2015-07-21T14:15:34.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git常用命令">
+<meta name="twitter:description" content="想多用github？不会git的命令怎么行。">
+
+    
+    <link rel="alternative" href="/atom.xml" title="Burningalive" type="application/atom+xml">
+    
+    
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Burningalive">Burningalive</a></h1>
+				<h2 class="blog-motto">暂时无梦的学生</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">博文列表</a></li>
+					
+						<li><a href="/about">关于我</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:burningalive.cn">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/07/21/git常用命令/" title="git常用命令" itemprop="url">git常用命令</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="burningalive" target="_blank" itemprop="author">burningalive</a>
+		
+  <p class="article-time">
+    <time datetime="2015-07-21T08:25:13.000Z" itemprop="datePublished"> 发表于 2015-07-21</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基础命令"><span class="toc-number">1.</span> <span class="toc-text">基础命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#git-config_配置"><span class="toc-number">1.1.</span> <span class="toc-text">git-config 配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#用户配置"><span class="toc-number">1.1.1.</span> <span class="toc-text">用户配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置级别"><span class="toc-number">1.1.2.</span> <span class="toc-text">配置级别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-init_初始化仓库"><span class="toc-number">1.2.</span> <span class="toc-text">git-init 初始化仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-status_对状态的跟踪"><span class="toc-number">1.3.</span> <span class="toc-text">git-status 对状态的跟踪</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#git-add_添加跟踪文件"><span class="toc-number">1.3.1.</span> <span class="toc-text">git-add 添加跟踪文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gitignore_筛选添加文件"><span class="toc-number">1.3.2.</span> <span class="toc-text">gitignore 筛选添加文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-rm_从暂存区删除文件"><span class="toc-number">1.3.3.</span> <span class="toc-text">git-rm 从暂存区删除文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-commit_从暂存区提交"><span class="toc-number">1.4.</span> <span class="toc-text">git-commit 从暂存区提交</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-log_查看历史信息"><span class="toc-number">1.5.</span> <span class="toc-text">git-log 查看历史信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_config_alias_配置别名"><span class="toc-number">1.6.</span> <span class="toc-text">git config alias 配置别名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-diff_查看差异"><span class="toc-number">1.7.</span> <span class="toc-text">git-diff 查看差异</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-checkout_撤销本地修改"><span class="toc-number">1.8.</span> <span class="toc-text">git-checkout 撤销本地修改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-reset_撤销暂存区内容"><span class="toc-number">1.9.</span> <span class="toc-text">git-reset 撤销暂存区内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git_branch分支操作"><span class="toc-number">2.</span> <span class="toc-text">git branch分支操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#git_checkout分支"><span class="toc-number">2.1.</span> <span class="toc-text">git checkout分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_reset回退"><span class="toc-number">2.2.</span> <span class="toc-text">git reset回退</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用捷径"><span class="toc-number">2.3.</span> <span class="toc-text">使用捷径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reset_vs_checkout"><span class="toc-number">2.4.</span> <span class="toc-text">reset vs checkout</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_stash暂时保存"><span class="toc-number">2.5.</span> <span class="toc-text">git stash暂时保存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_merge合并分支"><span class="toc-number">2.6.</span> <span class="toc-text">git merge合并分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_rebase修剪历史基线"><span class="toc-number">2.7.</span> <span class="toc-text">git rebase修剪历史基线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rebase_vs_merge"><span class="toc-number">2.8.</span> <span class="toc-text">rebase vs merge</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_tag别名"><span class="toc-number">2.9.</span> <span class="toc-text">git tag别名</span></a></li></ol></li></ol>
+		
+		</div>
+		
+		<h1 id="基础命令">基础命令</h1><p>使用git最基础的操作。</p>
+<h2 id="git-config_配置">git-config 配置</h2><h3 id="用户配置">用户配置</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user<span class="class">.name</span> <span class="string">"John EveryThing"</span></span><br><span class="line">git config --global user<span class="class">.email</span> yourusername@example.com</span><br></pre></td></tr></table></figure>
+<h3 id="配置级别">配置级别</h3><p>—local 默认，高优先级：只影响本仓库<br>—global 中优先级：影响到所有当前用户的git仓库<br>—system 低优先级：影响到全系统的git仓库</p>
+<h2 id="git-init_初始化仓库">git-init 初始化仓库</h2><p>使用<code>git status</code>查看当前仓库的信息。<br>再使用<code>git init</code>来在一个文件夹创建一个git仓库，会在此文件夹创建一个.git文件夹。</p>
+<h2 id="git-status_对状态的跟踪">git-status 对状态的跟踪</h2><p>git对文件的状态跟踪分内容状态和文件状态。<br>内容状态：工作目录、暂存区、提交区。<br>文件状态：未跟踪、已跟踪。<br>所有这些状态之间都可以相互转化。</p>
+<h3 id="git-add_添加跟踪文件">git-add 添加跟踪文件</h3><p><code>git add *.*</code>命令添加单个文件内容到暂存区，同时文件被跟踪。如果要添加当前目录下的所有文件，使用<code>git add .</code>命令。</p>
+<h3 id="gitignore_筛选添加文件">gitignore 筛选添加文件</h3><p>.gitignore在添加时忽略匹配的文件，仅作用于未追踪的文件。是一个筛选列表不能用于删除已经添加上的文件。在github已经有gitignore的官方忽略文档。</p>
+<h3 id="git-rm_从暂存区删除文件">git-rm 从暂存区删除文件</h3><p><code>git rm -cached</code>仅从暂存区删除。<br><code>git rm</code>从暂存区与工作目录删除。<br><code>git rm $(git ls-files --deleted)</code>删除所有被跟踪，但是在工作目录被删除的文件。其中ls-files是到暂存区查找。</p>
+<h2 id="git-commit_从暂存区提交">git-commit 从暂存区提交</h2><p><code>git commit</code>命令根据暂存区内容创建一个提交记录。<br><code>git commit -m &#39;initial commit&#39;</code>这个命令使用-m来在提交同时声明一个注释。<br>如果想要省略git add这一步直接提交，添加上-a参数，使用<code>git commit -a -m &#39;full commit&#39;</code>命令，就会从工作目录直接提交到提交区。</p>
+<h2 id="git-log_查看历史信息">git-log 查看历史信息</h2><p><code>git log</code>命令直接用于查看完整信息的提交历史。如果只想查看简短的配置信息，添加—oneline参数，即<code>git log --oneline</code>。<br>如果想让查看的配置信息完整美观又简洁：<br><figure class="highlight dos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git log --<span class="built_in">color</span> --graph --pretty=<span class="built_in">format</span>:'<span class="envvar">%Cred%</span>h%Creset </span><br><span class="line">-<span class="envvar">%C(yellow)%</span>d%Creset %s <span class="envvar">%Cgreen(%</span>cr) %C(bold blue)&lt;<span class="envvar">%an&gt;%</span>Creset --abbrev-commit</span><br></pre></td></tr></table></figure></p>
+<h2 id="git_config_alias_配置别名">git config alias 配置别名</h2><p>上面的配置信息太长了，用alias命令给自己定义缩短。<br><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global alias.lg <span class="string">"log --color --graph --pretty=format:</span><br><span class="line">'<span class="variable">%Cred</span><span class="variable">%h</span><span class="variable">%Creset</span> -<span class="variable">%C</span>(yellow)<span class="variable">%d</span><span class="variable">%Creset</span> <span class="variable">%s</span> <span class="variable">%Cgreen</span>(<span class="variable">%cr</span>) <span class="variable">%C</span>(bold blue)&lt;<span class="variable">%an</span>&gt;<span class="variable">%Creset</span> --abbrev-commit"</span></span><br><span class="line">$ git lg</span><br></pre></td></tr></table></figure></p>
+<h2 id="git-diff_查看差异">git-diff 查看差异</h2><p>直接使用<code>git diff</code>查看工作目录与暂存区的差异。<br>用<code>git diff -cached [&lt;reference&gt;]</code>查看暂存区与某次提交差异，默认为HEAD（指向当前的提交），如果只是为了查看暂存区与上一次提交的差异，最后的这个参数可以不传。<code>git diff HEAD</code>。<br>用<code>git diff &lt;reference&gt;</code>查看工作目录与某次提交的差异，后面可以接两个参数。<br><img src="http://ww2.sinaimg.cn/large/e7c360e8jw1eual27423nj20c107h75b.jpg" alt=""></p>
+<h2 id="git-checkout_撤销本地修改">git-checkout 撤销本地修改</h2><p><code>git checkout -- &lt;file&gt;</code>将文件内容从暂存区复制到工作目录，该操作会丢弃对暂存区内容的修改，使用时要小心。</p>
+<h2 id="git-reset_撤销暂存区内容">git-reset 撤销暂存区内容</h2><p><code>git reset HEAD &lt;file&gt;</code>将文件内容从上次提交回退到暂存区。这样的操作会造成暂存区与工作目录文件的不一致，git会提示没有用add命令添加修改后的工作目录内容到暂存区。<br>如皋想将内容从上次提交后在提交区的内容复制到工作目录，使用<code>gitcheckout HEAD -- &lt;file&gt;</code><br><img src="http://ww4.sinaimg.cn/large/e7c360e8jw1eual12iajej20pe0cognz.jpg" alt="git常用操作模型"></p>
+<h1 id="git_branch分支操作">git branch分支操作</h1><p>分支的增删查改都靠它。<br><code>git branch &lt;branchName&gt;</code>用来创建一个分支。<br>加入-d参数后<code>git branch -d &lt;branchName&gt;</code>可以用来删除指定的分支。</p>
+<h2 id="git_checkout分支">git checkout分支</h2><p>通过移动HEAD检出版本，可用于分支切换。<br><code>git checkout &lt;branchName&gt;</code>切换到目标分支。<br>加入-b参数后<code>git checkout -b &lt;branchName&gt;</code>会创建并切换到该分支。相当于先<code>git branch</code>后紧接一个<code>git checkout</code>。<br><code>git checkout &lt;reference&gt;</code>移动到任何一个commit id所在的引用对象上。<br>想快速回到上一个分支？使用<code>git checkout -</code>命令即可。<br><code>git branch -v</code>显示现在所有的分支信息，分支前面带星号的就是当前HEAD指针指向的分支。<br>当checkout到一个不是分支指针所在的commit id后，此时的HEAD指针会指向一个非分支指针指向的位置，此时的状态称为detached(分离的) head。如果HEAD处于分离状态就要尽量避免在此状态提交东西，因为没有引用会指向这个提交记录，当HEAD重新回到master分支时刚才的提交都会被视为没有做引用，最后会在垃圾回收阶段被回收。因此当HEAD处于分离状态是不要进行写操作，而只是读取它的内容。由于HEAD指向的内容可以被复制到暂存区和工作目录，这是可以查看具体提交时的信息。</p>
+<h2 id="git_reset回退">git reset回退</h2><p>如果要回退到其他commit版本<code>git reset --mixed &lt;commit id&gt;</code>，最后的参数如果不填就回退到上一个commit版本。这样，HEAD,master都会移动到上一个commit，同时它们指向的内容会被复制到暂存区。<br>当使用head模式<code>git reset --hard &lt;commit id&gt;</code>，这部分内容除了被复制到暂存区，还会被复制到工作目录。<br>使用soft模式<code>git reset --soft &lt;commit id&gt;</code>，只有HEAD,master移动到这个commit上，对暂存区和工作目录不会有处理。这样上一个提交没有上传，也没有任何指针指向它了，有可能会被回收，成为了一个没有被索引的提交。怎么找回它呢？使用<code>git reflog</code>命令按顺序查看之前经过的所有commit路径，当前所在的位置就是列表的顶部，之前的commit会按序向下排，但是使用这个命令找回之前的commit要尽快，否则有的记录可能会丢失。</p>
+<h2 id="使用捷径">使用捷径</h2><p>可以避免使用不直观的哈希值，用捷径,在下面的例子中，A表示HEAD指针，或分支名，或commit id。<br>A^表示A之上的父提交。A~n表示在A之前的第n次提交。<br><img src="http://ww4.sinaimg.cn/large/e7c360e8jw1euao3iivbbj20e408wabi.jpg" alt=""></p>
+<h2 id="reset_vs_checkout">reset vs checkout</h2><p>通过上面的内容可以看出reset和checkout直接有非常多的相似之处，下面列表以表示一下他们之间的区别。<br><img src="http://ww4.sinaimg.cn/large/e7c360e8jw1euao3iivbbj20e408wabi.jpg" alt=""></p>
+<h2 id="git_stash暂时保存">git stash暂时保存</h2><p>stash是一个独立在工作目录和暂存区之外的一个临时保存区。<br><code>git stash save &#39;push to stash area&#39;</code>会保存目前的工作目录和暂存区状态，并返回到干净的工作空间，同时保存一条注释。</p>
+<p>使用<code>git stash list</code>查看stash区保存的所有信息。</p>
+<p>然后使用<code>git stash apply stash@{0}</code>恢复stash区的内容到工作目录。最后使用<code>git stash drop stash@{0}</code>将stash上的记录删掉。<br>上面的两条操作可以合为<code>stash pop</code>一条命令完成，stash pop = stash apply + stash drop.</p>
+<h2 id="git_merge合并分支">git merge合并分支</h2><p>假设当前的HEAD指向master分支，同时还有个分支名为next，使用命令<code>git merge next</code>由于目前正在master分支所以省略了第二个参数，合并的结果会被复制到工作目录和暂存区，再会完成一次提交，这个提交节点的父节点有两个。来看一下这个合并后的节点的具体信息，使用<code>git cat-gile -p HEAD</code>命令，会发现有两个parent commit id，而next分支没有改变。<br>在<code>git merge next master</code>合并后有很大的几率会提示两个节点中有冲突的文件。使用<code>git status</code>查看冲突的具体信息，在文件中做好修改后使用git add和git commit来解决。<br>假设从master分支创建了next分支，但是master分支没有向前移动仅仅是在next分支上做了修改，这时候使用<code>git merge next</code>命令会将master分支指向当前操作的next分支，这样操作就会变成线性，master分支其实与next分支合并了。<br>如果要避免fast-forward式的合并，使用<code>git merge next --no-ff</code>，这样原来的master分支会向前复制到一个新分支，并且与next分支合并。</p>
+<h2 id="git_rebase修剪历史基线">git rebase修剪历史基线</h2><p>首先现在有两个分支：master和feature<br><img src="http://ww4.sinaimg.cn/large/e7c360e8jw1euaql9ly2qj20di04mdgi.jpg" alt=""><br>对如图所示的分支进行修剪基线操作<code>git rebase master</code>，git首先会找到两个分支节点的结束点，然后会将head所在的所有历史节点分别与master最后的节点进行合并并在master分支上依次将合并结果保存为新节点，这个过程是重演而不是复制，因为创建了2个新的节点。然后HEAD和feather分支都会指向最后的这次提交，master分支还保存在原来的位置，如下图：<br><img src="http://ww4.sinaimg.cn/large/e7c360e8jw1euaqisecsvj20mf07i76j.jpg" alt=""><br>然而并不是所有的变基操作都需要将原来的分支上所有节点都与master合并一次，所以这时候可以用<code>git rebase --onto master &lt;commit id&gt;</code>这样指定feather上某个特定的节点之后的节点与master的最后一个节点合并，指定的节点在合并时就被丢弃了。如图<br><img src="http://ww2.sinaimg.cn/large/e7c360e8jw1euar0ik5cej20j206dwfk.jpg" alt=""></p>
+<h2 id="rebase_vs_merge">rebase vs merge</h2><p>rebase和merge没有孰好孰坏之说，最大的区别就是合并后是否是线性的。<br>切勿在公有分支使用rebase，比如之前例子中的master分支，否则rebase的后果会变成这样：<br><img src="http://ww3.sinaimg.cn/large/e7c360e8jw1euar8xxodsj20gw04hgms.jpg" alt=""><br>这样的master就变化到feather了。</p>
+<h2 id="git_tag别名">git tag别名</h2><p>如果要给一个commit id 设置一个别名就可以使用<code>git tag v0.1 e39d0b2</code></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/git/">git</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/git/">git</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="burningalive.cn/2015/07/21/git常用命令/" data-title="git常用命令 | Burningalive" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/10/31/随便写在大二上半学期/" title="随便写在大二上半学期">
+  <strong>上一篇：</strong><br/>
+  <span>
+  随便写在大二上半学期</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/07/02/DOM初学笔记/"  title="DOM初学笔记">
+ <strong>下一篇：</strong><br/> 
+ <span>DOM初学笔记
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2015/07/21/git常用命令/" data-title="git常用命令" data-url="burningalive.cn/2015/07/21/git常用命令/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基础命令"><span class="toc-number">1.</span> <span class="toc-text">基础命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#git-config_配置"><span class="toc-number">1.1.</span> <span class="toc-text">git-config 配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#用户配置"><span class="toc-number">1.1.1.</span> <span class="toc-text">用户配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置级别"><span class="toc-number">1.1.2.</span> <span class="toc-text">配置级别</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-init_初始化仓库"><span class="toc-number">1.2.</span> <span class="toc-text">git-init 初始化仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-status_对状态的跟踪"><span class="toc-number">1.3.</span> <span class="toc-text">git-status 对状态的跟踪</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#git-add_添加跟踪文件"><span class="toc-number">1.3.1.</span> <span class="toc-text">git-add 添加跟踪文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gitignore_筛选添加文件"><span class="toc-number">1.3.2.</span> <span class="toc-text">gitignore 筛选添加文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-rm_从暂存区删除文件"><span class="toc-number">1.3.3.</span> <span class="toc-text">git-rm 从暂存区删除文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-commit_从暂存区提交"><span class="toc-number">1.4.</span> <span class="toc-text">git-commit 从暂存区提交</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-log_查看历史信息"><span class="toc-number">1.5.</span> <span class="toc-text">git-log 查看历史信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_config_alias_配置别名"><span class="toc-number">1.6.</span> <span class="toc-text">git config alias 配置别名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-diff_查看差异"><span class="toc-number">1.7.</span> <span class="toc-text">git-diff 查看差异</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-checkout_撤销本地修改"><span class="toc-number">1.8.</span> <span class="toc-text">git-checkout 撤销本地修改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git-reset_撤销暂存区内容"><span class="toc-number">1.9.</span> <span class="toc-text">git-reset 撤销暂存区内容</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#git_branch分支操作"><span class="toc-number">2.</span> <span class="toc-text">git branch分支操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#git_checkout分支"><span class="toc-number">2.1.</span> <span class="toc-text">git checkout分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_reset回退"><span class="toc-number">2.2.</span> <span class="toc-text">git reset回退</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用捷径"><span class="toc-number">2.3.</span> <span class="toc-text">使用捷径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reset_vs_checkout"><span class="toc-number">2.4.</span> <span class="toc-text">reset vs checkout</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_stash暂时保存"><span class="toc-number">2.5.</span> <span class="toc-text">git stash暂时保存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_merge合并分支"><span class="toc-number">2.6.</span> <span class="toc-text">git merge合并分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_rebase修剪历史基线"><span class="toc-number">2.7.</span> <span class="toc-text">git rebase修剪历史基线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rebase_vs_merge"><span class="toc-number">2.8.</span> <span class="toc-text">rebase vs merge</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git_tag别名"><span class="toc-number">2.9.</span> <span class="toc-text">git tag别名</span></a></li></ol></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/CSS/" title="CSS">CSS<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/HTML/" title="HTML">HTML<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Hexo/" title="Hexo">Hexo<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/JavaScript/" title="JavaScript">JavaScript<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/git/" title="git">git<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/前端/" title="前端">前端<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/生活随笔/" title="生活随笔">生活随笔<sup>3</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/前端/" title="前端">前端<sup>5</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/杂谈/" title="杂谈">杂谈<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/生活随笔/" title="生活随笔">生活随笔<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/JavaScript/" title="JavaScript">JavaScript<sup>2</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/HTML/" title="HTML">HTML<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/DOM/" title="DOM">DOM<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/CSS/" title="CSS">CSS<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://peterz.cn/" target="_blank" title="宫莹的下午茶">Peter&#39;s Tea Time——只谈心，不撕逼</a>
+            
+          </li>
+        
+          <li>
+            
+            	<a href="http://www.sutgroup.net" target="_blank" title="SUT Group">SUT Group</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	
+	<section class="info">
+		<p> 运动  读书  思考  代码 <br/>
+			学习思考  个人总结  笔记感悟</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		<a href="https://github.com/burningalive" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		<a href="mailto:burningalive.fff@live.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2015 
+		
+		<a href="/about" target="_blank" title="burningalive">burningalive</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#nothing"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"burningalive"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

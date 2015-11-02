@@ -4,24 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>JavaScript变量作用域、闭包 | Burningalive</title>
+    <title>DOM初学笔记 | Burningalive</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="burningalive">
     
 
     
-    <meta name="description" content="万恶的JS课程又更新了……速度太快了得加紧记啦（然而这部分听起来真是好吃力）">
+    <meta name="description" content="这一整篇文章都会是DOM编程艺术这门课的笔记。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript变量作用域、闭包">
-<meta property="og:url" content="burningalive.cn/2015/06/17/JavaScript变量作用域、闭包/index.html">
+<meta property="og:title" content="DOM初学笔记">
+<meta property="og:url" content="burningalive.cn/2015/07/02/DOM初学笔记/index.html">
 <meta property="og:site_name" content="Burningalive">
-<meta property="og:description" content="万恶的JS课程又更新了……速度太快了得加紧记啦（然而这部分听起来真是好吃力）">
-<meta property="og:image" content="http://ww2.sinaimg.cn/large/e7c360e8jw1et7gy95aq7j206x076wes.jpg">
-<meta property="og:updated_time" content="2015-06-18T04:26:40.000Z">
+<meta property="og:description" content="这一整篇文章都会是DOM编程艺术这门课的笔记。">
+<meta property="og:updated_time" content="2015-07-03T10:22:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript变量作用域、闭包">
-<meta name="twitter:description" content="万恶的JS课程又更新了……速度太快了得加紧记啦（然而这部分听起来真是好吃力）">
+<meta name="twitter:title" content="DOM初学笔记">
+<meta name="twitter:description" content="这一整篇文章都会是DOM编程艺术这门课的笔记。">
 
     
     <link rel="alternative" href="/atom.xml" title="Burningalive" type="application/atom+xml">
@@ -72,14 +71,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/06/17/JavaScript变量作用域、闭包/" title="JavaScript变量作用域、闭包" itemprop="url">JavaScript变量作用域、闭包</a>
+      <a href="/2015/07/02/DOM初学笔记/" title="DOM初学笔记" itemprop="url">DOM初学笔记</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="burningalive" target="_blank" itemprop="author">burningalive</a>
 		
   <p class="article-time">
-    <time datetime="2015-06-17T14:25:22.000Z" itemprop="datePublished"> 发表于 2015-06-17</time>
+    <time datetime="2015-07-02T14:27:05.000Z" itemprop="datePublished"> 发表于 2015-07-02</time>
     
   </p>
 </header>
@@ -88,41 +87,13 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#变量作用域"><span class="toc-number">1.</span> <span class="toc-text">变量作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#静态作用域"><span class="toc-number">1.1.</span> <span class="toc-text">静态作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态作用域"><span class="toc-number">1.2.</span> <span class="toc-text">动态作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Js变量作用举"><span class="toc-number">1.3.</span> <span class="toc-text">Js变量作用举</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#词法环境"><span class="toc-number">1.4.</span> <span class="toc-text">词法环境</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#文档树"><span class="toc-number">1.</span> <span class="toc-text">文档树</span></a></li></ol>
 		
 		</div>
 		
-		<h1 id="变量作用域">变量作用域</h1><p>下面的例子都用这段代码来演示：<br><figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var x = <span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span><span class="params">()</span>&#123;</span></span><br><span class="line">	alert<span class="params">(x)</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span><span class="params">()</span>&#123;</span></span><br><span class="line">	var x=<span class="number">20</span>;</span><br><span class="line">	foo<span class="params">()</span>;</span><br><span class="line">&#125;</span><br><span class="line">bar<span class="params">()</span>;</span><br></pre></td></tr></table></figure></p>
-<h2 id="静态作用域">静态作用域</h2><ul>
-<li>又称词法作用域，在编译阶段就可以决定变量的引用。</li>
-<li>由程序定义的位置决定。</li>
-</ul>
-<p>这里在两个函数外定义了x，它的作用域位于全局，可以用于foo函数和bar函数。foo的外层作用域就是全局作用域，构成了一种嵌套关系，内部没有定义x。bar函数当中定义了x。<br>foo函数要调用x时沿着这条作用域的链去找x，所以使用的是全局环境下的x。</p>
-<h2 id="动态作用域">动态作用域</h2><p>与程序运行时刻决定，一般使用动态栈来管理，Js并不使用动态作用域。<br>如果使用动态作用域的思路来考虑：在bar函数中调用的x栈顺序如图<img src="http://ww2.sinaimg.cn/large/e7c360e8jw1et7gy95aq7j206x076wes.jpg" alt=""><br>按照程序向下执行的顺序依次在栈中创建了如图的元素，最后调用foo函数来获取x的值时函数会取栈最后添加的x:20。</p>
-<h2 id="Js变量作用举">Js变量作用举</h2><ul>
-<li>js使用静态作用域</li>
-<li>js没有块级作用域 只有函数中的作用域</li>
-<li>ES5中使用词法环境管理静态作用域</li>
-</ul>
-<h2 id="词法环境">词法环境</h2><ul>
-<li>组成</li>
-</ul>
-<ol>
-<li>环境记录（形参、变量、函数等）</li>
-<li>对外部词法环境的引用（outer）</li>
-</ol>
-<ul>
-<li>一段代码开始执行前，先初始化词法环境</li>
-</ul>
-<ol>
-<li>形参</li>
-<li>函数定义</li>
-<li>变量定义</li>
-</ol>
-<p>词法环境的构造过程</p>
-<ol>
-<li>全局环境初始化</li>
-</ol>
+		<h1 id="文档树">文档树</h1><p>一段html文档会以标签和内容构成DOM树。<br><code>.parentNode</code>  访问父元素。<br><code>.firstChild</code>  访问第一个子元素节点（包括文本内容或标签）。<br><code>.lastChild</code>访问最后一个子元素节点。<br><code>.previousSibling</code>访问前一个兄弟元素（如果没有返回none）。<br><code>.nextSibling</code>访问下一个兄弟元素。</p>
+<p><code>ELEMENT_NODE</code>用来选择标签节点。<br><code>TEXT_NODE</code>用来设置文本内容节点。</p>
+<p><code>.firstElementChild</code>用来选择子节点中第一个元素。<br><code>.lastElementChild</code>用来选择子节点中最后一个元素。<br><code>.nextElementSibling</code>选择下一个兄弟元素。<br><code>.previousElementSibling</code>选择前一个兄弟元素。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -130,13 +101,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/JavaScript/">JavaScript</a>
+  <a class="article-category-link" href="/categories/前端/">前端</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/JavaScript/">JavaScript</a><a href="/tags/前端/">前端</a>
+  <span></span> <a href="/tags/DOM/">DOM</a><a href="/tags/前端/">前端</a>
   </div>
 
 </div>
@@ -145,7 +116,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="burningalive.cn/2015/06/17/JavaScript变量作用域、闭包/" data-title="JavaScript变量作用域、闭包 | Burningalive" data-tsina="null" class="share clearfix">
+	  <div data-url="burningalive.cn/2015/07/02/DOM初学笔记/" data-title="DOM初学笔记 | Burningalive" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -159,18 +130,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/06/18/我在做什么/" title="五月总结：远方-更大的可能世界">
+ <a href="/2015/07/21/git常用命令/" title="git常用命令">
   <strong>上一篇：</strong><br/>
   <span>
-  五月总结：远方-更大的可能世界</span>
+  git常用命令</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2015/06/17/JavaScript在浏览器中的应用/"  title="JavaScript在浏览器中的应用">
+<a href="/2015/06/18/我在做什么/"  title="五月总结：更大的可能世界">
  <strong>下一篇：</strong><br/> 
- <span>JavaScript在浏览器中的应用
+ <span>五月总结：更大的可能世界
 </span>
 </a>
 </div>
@@ -179,7 +150,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/06/17/JavaScript变量作用域、闭包/" data-title="JavaScript变量作用域、闭包" data-url="burningalive.cn/2015/06/17/JavaScript变量作用域、闭包/"></div>
+	<div class="ds-thread" data-thread-key="2015/07/02/DOM初学笔记/" data-title="DOM初学笔记" data-url="burningalive.cn/2015/07/02/DOM初学笔记/"></div>
 </section>
 
 
@@ -189,7 +160,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#变量作用域"><span class="toc-number">1.</span> <span class="toc-text">变量作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#静态作用域"><span class="toc-number">1.1.</span> <span class="toc-text">静态作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态作用域"><span class="toc-number">1.2.</span> <span class="toc-text">动态作用域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Js变量作用举"><span class="toc-number">1.3.</span> <span class="toc-text">Js变量作用举</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#词法环境"><span class="toc-number">1.4.</span> <span class="toc-text">词法环境</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#文档树"><span class="toc-number">1.</span> <span class="toc-text">文档树</span></a></li></ol>
  
   </div>
 
@@ -215,7 +186,15 @@
 		  
 		
 		  
-			<li><a href="/categories/JavaScript/" title="JavaScript">JavaScript<sup>6</sup></a></li>
+			<li><a href="/categories/JavaScript/" title="JavaScript">JavaScript<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/git/" title="git">git<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/前端/" title="前端">前端<sup>1</sup></a></li>
 		  
 		
 		  
@@ -232,11 +211,7 @@
 		<ul class="clearfix">
 		
 			
-				<li><a href="/tags/前端/" title="前端">前端<sup>8</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/JavaScript/" title="JavaScript">JavaScript<sup>6</sup></a></li>
+				<li><a href="/tags/前端/" title="前端">前端<sup>5</sup></a></li>
 			
 		
 			
@@ -248,11 +223,23 @@
 			
 		
 			
+				<li><a href="/tags/JavaScript/" title="JavaScript">JavaScript<sup>2</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/博客/" title="博客">博客<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/HTML/" title="HTML">HTML<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/DOM/" title="DOM">DOM<sup>1</sup></a></li>
 			
 		
 			
