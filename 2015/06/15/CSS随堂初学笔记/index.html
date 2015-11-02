@@ -24,7 +24,7 @@
 <meta property="og:image" content="http://ww3.sinaimg.cn/large/e7c360e8jw1etfcwlzh4nj20fe033aap.jpg">
 <meta property="og:image" content="http://ww3.sinaimg.cn/mw690/e7c360e8jw1etffbudtb0j20by03y74m.jpg">
 <meta property="og:image" content="http://ww4.sinaimg.cn/large/e7c360e8gw1etg97e9wm7j20e108q75c.jpg">
-<meta property="og:updated_time" content="2015-11-02T11:25:04.000Z">
+<meta property="og:updated_time" content="2015-11-02T15:01:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS初学笔记">
 <meta name="twitter:description" content="看着看着CSS的课程就发现问题了——东西太多，讲得太快，没有重点，根本记不住。所以现在赶紧来做做笔记。deadline还有几天，得抓紧了。">
@@ -162,7 +162,7 @@
 <h2 id="relative_相对定位">relative 相对定位</h2><p>这会使元素偏移某一个距离，仍然保持原来的形状，它原来占据的空间仍然会保留，这与absolute相反，但是会偏移一个距离。</p>
 <h2 id="static_静态定位">static 静态定位</h2><p>元素框正常生成，快捷元素形成矩形框，作为文档流的一部分，行内元素会形成一个或多个行框放在父元素当中。</p>
 <h2 id="fixed_固定的位置">fixed 固定的位置</h2><p>表现为position设置为absolute，元素框原来的位置时不保留的，但是它的包含框是浏览器窗口本身，由窗口大小决定位置。</p>
-<h1 id="盒模型">盒模型</h1><p><img src="http://ww4.sinaimg.cn/large/e7c360e8jw1et7bgs5pi6j20g707l0t5.jpg" alt="盒模型示例"><br>从内到外依次是content,padding,border,margin。<br>content = width * height。<br>padding,border,margin都有top,right,bottom,left四部分，从上开始顺时针方向排列。</p>
+<h1 id="盒模型">盒模型</h1><p><img src="http://ww4.sinaimg.cn/large/e7c360e8jw1et7bgs5pi6j20g707l0t5.jpg" alt="盒模型示例"><br>从内到外依次是<code>content</code>,<code>padding</code>,<code>border</code>,<code>margin</code>。<br><code>content = width * height</code><br><code>padding</code>,<code>border</code>,<code>margin</code>都有<code>top</code>,<code>right</code>,<code>bottom</code>,<code>left</code>四部分，从上开始顺时针方向排列。</p>
 <h2 id="width、height">width、height</h2><p>值多用像素和百分比来定义。百分比的参照物大多是它的父元素。<br>width的默认值是auto。<br>引申：max-width、min-width。<br>height的语法与宽度一样。默认的height是内容高度。<br>引申：max-height、min-height。</p>
 <h2 id="padding_填充">padding 填充</h2><p><code>padding:[&lt;length&gt;|&lt;percentage&gt;]{1,4}</code><br>只填一个值就会上下左右都收缩。<br>padding填充值不足4个时就有值缩写的效果。<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">padding:</span> <span class="number">20</span>px; == <span class="string">padding:</span> <span class="number">20</span>px <span class="number">20</span>px <span class="number">20</span>px <span class="number">20</span>px;</span><br><span class="line"><span class="string">padding:</span> <span class="number">20</span>px <span class="number">10</span>px; == <span class="string">padding:</span> <span class="number">20</span>px <span class="number">10</span>px <span class="number">20</span>px <span class="number">10</span>px;<span class="comment">//对称排列</span></span><br><span class="line"><span class="string">padding:</span> <span class="number">20</span>px <span class="number">10</span>px <span class="number">30</span>px; == <span class="string">padding:</span> <span class="number">20</span>px <span class="number">10</span>px <span class="number">30</span>px <span class="number">10</span>px;</span><br></pre></td></tr></table></figure></p>
 <p>对面相等，后面省略；四面相等，只填一个。</p>
