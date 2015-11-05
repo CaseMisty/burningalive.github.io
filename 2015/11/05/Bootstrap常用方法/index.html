@@ -4,23 +4,31 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>我的博客自定义设置过程 | Burningalive</title>
+    <title>Burningalive</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="burningalive">
     
 
     
-    <meta name="description" content="使用Hexo搭建博客之路真是艰难险阻……设置繁复且不稳定，在不同的电脑上总会出现各种乱七八糟不同的错误，要设置的项目众多，然而设置的位置又不明朗。本来感觉我的博客已经符合我的预期要求了，突然多说评论功能又无法使用了，实在让人恼火，因此在此第二次重建之时记录一下自定义设置的步骤以备今后之用。">
+    <meta name="description" content="Bootstrap常用方法
+Bootstrap文档Bootstrap中文文档——基本模版和案例及简要介绍Bootstrap中文文档——全局 CSS 样式详细说明
+container容器无论在什么情况下，一个div外框首先包括一个class=&amp;#39;container&amp;#39;，八成没错。这是一个基础容器，左右边距自动居中，高度随内部元素变化。还有一个容器令左右边距自动占满屏幕宽度：class=&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的博客自定义设置过程">
-<meta property="og:url" content="burningalive.cn/2015/06/07/博客建立过程/index.html">
+<meta property="og:title" content="Burningalive">
+<meta property="og:url" content="burningalive.cn/2015/11/05/Bootstrap常用方法/index.html">
 <meta property="og:site_name" content="Burningalive">
-<meta property="og:description" content="使用Hexo搭建博客之路真是艰难险阻……设置繁复且不稳定，在不同的电脑上总会出现各种乱七八糟不同的错误，要设置的项目众多，然而设置的位置又不明朗。本来感觉我的博客已经符合我的预期要求了，突然多说评论功能又无法使用了，实在让人恼火，因此在此第二次重建之时记录一下自定义设置的步骤以备今后之用。">
-<meta property="og:updated_time" content="2015-11-05T14:58:51.000Z">
+<meta property="og:description" content="Bootstrap常用方法
+Bootstrap文档Bootstrap中文文档——基本模版和案例及简要介绍Bootstrap中文文档——全局 CSS 样式详细说明
+container容器无论在什么情况下，一个div外框首先包括一个class=&amp;#39;container&amp;#39;，八成没错。这是一个基础容器，左右边距自动居中，高度随内部元素变化。还有一个容器令左右边距自动占满屏幕宽度：class=&amp;">
+<meta property="og:image" content="http://ww2.sinaimg.cn/large/e7c360e8jw1exqihfz3qdj20cv09smx0.jpg">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/1165940-1a017b13a7901fb8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2015-11-05T16:03:55.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的博客自定义设置过程">
-<meta name="twitter:description" content="使用Hexo搭建博客之路真是艰难险阻……设置繁复且不稳定，在不同的电脑上总会出现各种乱七八糟不同的错误，要设置的项目众多，然而设置的位置又不明朗。本来感觉我的博客已经符合我的预期要求了，突然多说评论功能又无法使用了，实在让人恼火，因此在此第二次重建之时记录一下自定义设置的步骤以备今后之用。">
+<meta name="twitter:title" content="Burningalive">
+<meta name="twitter:description" content="Bootstrap常用方法
+Bootstrap文档Bootstrap中文文档——基本模版和案例及简要介绍Bootstrap中文文档——全局 CSS 样式详细说明
+container容器无论在什么情况下，一个div外框首先包括一个class=&amp;#39;container&amp;#39;，八成没错。这是一个基础容器，左右边距自动居中，高度随内部元素变化。还有一个容器令左右边距自动占满屏幕宽度：class=&amp;">
 
     
     <link rel="alternative" href="/atom.xml" title="Burningalive" type="application/atom+xml">
@@ -71,14 +79,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/06/07/博客建立过程/" title="我的博客自定义设置过程" itemprop="url">我的博客自定义设置过程</a>
+      <a href="/2015/11/05/Bootstrap常用方法/" title="" itemprop="url"></a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="burningalive" target="_blank" itemprop="author">burningalive</a>
 		
   <p class="article-time">
-    <time datetime="2015-06-07T13:25:03.000Z" itemprop="datePublished"> 发表于 2015-06-07</time>
+    <time datetime="2015-11-05T15:03:06.000Z" itemprop="datePublished"> 发表于 2015-11-05</time>
     
   </p>
 </header>
@@ -87,59 +95,23 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#配置SSH_keys"><span class="toc-number">1.</span> <span class="toc-text">配置SSH keys</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#检查SSH_keys的设置"><span class="toc-number">1.1.</span> <span class="toc-text">检查SSH keys的设置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#部署Hexo"><span class="toc-number">2.</span> <span class="toc-text">部署Hexo</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Bootstrap文档"><span class="toc-number">1.</span> <span class="toc-text">Bootstrap文档</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#container容器"><span class="toc-number">1.1.</span> <span class="toc-text">container容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#栅格系统"><span class="toc-number">1.2.</span> <span class="toc-text">栅格系统</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<h1 id="配置SSH_keys">配置SSH keys</h1><p>我们如何让本地git项目与远程的github建立联系呢？用SSH keys。</p>
-<h2 id="检查SSH_keys的设置">检查SSH keys的设置</h2><p>首先我们需要检查你电脑上现有的ssh key：</p>
-<pre><code>$ cd ~/<span class="class">.ssh</span> 检查本机的ssh密钥
-</code></pre><p>如果提示：No such file or directory 说明你是第一次使用git。<br>生成新的SSH Key：</p>
-<pre><code>$ ssh-keygen -t rsa -C <span class="string">"邮件地址@youremail.com"</span>
-Generating <span class="keyword">public</span>/<span class="keyword">private</span> rsa <span class="keyword">key</span> pair.
-Enter file <span class="keyword">in</span> which <span class="keyword">to</span> save the <span class="keyword">key</span> (/Users/your_user_directory/.ssh/id_rsa):&lt;回车就好&gt;
-</code></pre><p>注意1: 此处的邮箱地址，你可以输入自己的邮箱地址；注意2: 此处的「-C」的是大写的「C」<br>然后系统会要你输入密码：</p>
-<pre><code>Enter passphrase (empty <span class="keyword">for</span> no passphrase):<span class="variable">&lt;输入加密串&gt;</span>
-Enter same passphrase again:<span class="variable">&lt;再次输入加密串&gt;</span>
-</code></pre><p>在回车中会提示你输入一个密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。这个设置是防止别人往你的项目里提交内容。<br>注意：输入密码的时候没有*字样的，你直接输入就可以了。<br>最后看到这样的界面，就成功设置ssh key了：</p>
-<h1 id="部署Hexo">部署Hexo</h1><p>使用git输入命令。</p>
-<pre><code>$ npm <span class="keyword">install</span> -g hexo
-</code></pre><p>开始下载Hexo的文件，在硬盘中新建一个文件夹，例如起名为hexo，右键之选择Git bush。</p>
-<pre><code>$ hexo init
-npm <span class="keyword">install</span>
-</code></pre><p>这样hexo的文件就在新建的文件夹创建好了。<br>之后来下载主题，我使用的是官网jacman这个主题</p>
-<pre><code><span class="variable">$ </span>git clone <span class="symbol">https:</span>/<span class="regexp">/github.com/wuchong</span><span class="regexp">/jacman.git themes/jacman</span>
-</code></pre><p>这时git会开始下载jacman主题到新建的文件夹。虽然下载过来了，但是我们还没有设置去使用这个主题。在hexo的根目录下打开_config.yml文件，推荐使用sublime text这个软件，如果使用Windows自带的记事本根本就没法看清内部的设置项目。</p>
-<pre><code><span class="attribute">theme</span>: <span class="string">jacman</span>
-</code></pre><p>如果要提交到github，在最下方设置：</p>
-<pre><code><span class="attribute">deploy</span>:
-  <span class="attribute">type</span>: git
-  <span class="attribute">repository</span>: <span class="attribute">https</span>:<span class="comment">//github.com/ yourname /yourname.github.io.git</span>
-  <span class="attribute">branch</span>: master
-</code></pre><p>冒号后必须加一个空格，否则会报错。主题的配置文件在/hexo/theme/jacman/_config.yml  在其中的duoshuo_shortname:填上你在多说网站注册号的账户名就可以使用多说了。</p>
-<p>常用命令：<br>本地调试：</p>
-<pre><code><span class="variable">$ </span>hexo s
-</code></pre><p>每次添加了新文章，做出了设置上的修改时：</p>
-<pre><code><span class="variable">$ </span>hexo g 
-</code></pre><p>这样你本地的文件就会更新。<br>如果要上传文件到github：</p>
-<pre><code><span class="variable">$ </span>hexo d
-</code></pre><p>如果上传时出现提示:Error Deployer not found:git,输入<code>npm install hexo-deployer-git --save</code><br>如果想新建文章，输入<code>$ hexo n 文章名</code>,之后就会在/hexo/source/_post创建出 文章名.md文件</p>
-<p>在hexo\scaffolds\post.md中添加<code>categories:</code>和<code>description:</code>这样每次<code>$ hexo n</code>之后都会自动添加上这两条。</p>
+		<p>Bootstrap常用方法</p>
+<h1 id="Bootstrap文档">Bootstrap文档</h1><p><a href="http://v3.bootcss.com/getting-started/" target="_blank" rel="external">Bootstrap中文文档——基本模版和案例及简要介绍</a><br><a href="http://v3.bootcss.com/css/" target="_blank" rel="external">Bootstrap中文文档——全局 CSS 样式详细说明</a></p>
+<h2 id="container容器">container容器</h2><p>无论在什么情况下，一个div外框首先包括一个<code>class=&#39;container&#39;</code>，八成没错。这是一个基础容器，左右边距自动居中，高度随内部元素变化。<br>还有一个容器令左右边距自动占满屏幕宽度：<code>class=&#39;container-fluid&#39;</code></p>
+<h2 id="栅格系统">栅格系统</h2><p>Bootstrap的栅格系统会把一行分为12块，这样每个屏幕分为 n × 12 个栅格，这样在不同的格子里填充内容会非常方便页面的布局。<br>使用示例：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"cal"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"col-xs-1"</span>&gt;</span>7<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"col-xs-1"</span>&gt;</span>8<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"col-xs-1"</span>&gt;</span>9<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"col-xs-1"</span>&gt;</span>4<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"col-xs-1"</span>&gt;</span>5<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"col-xs-1"</span>&gt;</span>6<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"row"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"col-xs-1"</span>&gt;</span>1<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"col-xs-1"</span>&gt;</span>2<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"col-xs-1"</span>&gt;</span>3<span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>每一行的栅格都最好放在一个row容器里，效果如图：<br><img src="http://ww2.sinaimg.cn/large/e7c360e8jw1exqihfz3qdj20cv09smx0.jpg" alt="栅格示例"></p>
+<p>每一个栅格可以嵌套栅格。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/1165940-1a017b13a7901fb8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
+<p>从小到大分别是<code>.col-xs</code>,<code>.col-sm-</code>,<code>.col-md-</code>, <code>.col-lg-</code>,具体属性见上图。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
-</div>
-
-
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/博客/">博客</a><a href="/tags/杂谈/">杂谈</a>
-  </div>
 
 </div>
 
@@ -147,7 +119,7 @@ npm <span class="keyword">install</span>
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="burningalive.cn/2015/06/07/博客建立过程/" data-title="我的博客自定义设置过程 | Burningalive" data-tsina="null" class="share clearfix">
+	  <div data-url="burningalive.cn/2015/11/05/Bootstrap常用方法/" data-title="Burningalive" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -160,19 +132,11 @@ npm <span class="keyword">install</span>
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/06/08/JavaScript内置对象/" title="JavaScript的内置对象">
-  <strong>上一篇：</strong><br/>
-  <span>
-  JavaScript的内置对象</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/06/05/第一篇文章/"  title="博客创建好之后的第一篇文章">
+<a href="/2015/11/03/学JavaWeb的第一天/"  title="学Javaweb的第一天">
  <strong>下一篇：</strong><br/> 
- <span>博客创建好之后的第一篇文章
+ <span>学Javaweb的第一天
 </span>
 </a>
 </div>
@@ -181,7 +145,7 @@ npm <span class="keyword">install</span>
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/06/07/博客建立过程/" data-title="我的博客自定义设置过程" data-url="burningalive.cn/2015/06/07/博客建立过程/"></div>
+	<div class="ds-thread" data-thread-key="2015/11/05/Bootstrap常用方法/" data-title="" data-url="burningalive.cn/2015/11/05/Bootstrap常用方法/"></div>
 </section>
 
 
@@ -191,7 +155,7 @@ npm <span class="keyword">install</span>
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#配置SSH_keys"><span class="toc-number">1.</span> <span class="toc-text">配置SSH keys</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#检查SSH_keys的设置"><span class="toc-number">1.1.</span> <span class="toc-text">检查SSH keys的设置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#部署Hexo"><span class="toc-number">2.</span> <span class="toc-text">部署Hexo</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Bootstrap文档"><span class="toc-number">1.</span> <span class="toc-text">Bootstrap文档</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#container容器"><span class="toc-number">1.1.</span> <span class="toc-text">container容器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#栅格系统"><span class="toc-number">1.2.</span> <span class="toc-text">栅格系统</span></a></li></ol></li></ol>
  
   </div>
 
